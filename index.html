@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PneuPro — Atelier Pneus Nantes | Réparation, Montage, Géométrie</title>
+<meta name="description" content="Atelier pneus à Nantes depuis 2012. Réparation crevaison, montage, équilibrage et géométrie. Devis gratuit, intervention rapide. Ouvert Lun–Sam. ☎ 02 40 50 70 24">
+<meta name="keywords" content="pneu nantes, réparation pneu nantes, montage pneu nantes, crevaison nantes, géométrie nantes, pneu hiver nantes">
+<link rel="canonical" href="https://www.pneupro-nantes.fr/">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.pneupro-nantes.fr/">
+<meta property="og:title" content="PneuPro — Atelier Pneus Nantes">
+<meta property="og:description" content="Réparation, montage et géométrie de pneus à Nantes. Ouvert 6j/7. Prix transparents. ☎ 02 40 50 70 24">
+<meta property="og:image" content="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1200&q=80">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PneuPro — Atelier Pneus Nantes">
+<meta name="twitter:description" content="Réparation, montage et géométrie de pneus à Nantes. Ouvert 6j/7.">
+
+<!-- Schema.org LocalBusiness (pour Google) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoRepair",
+  "name": "PneuPro",
+  "description": "Atelier spécialisé en pneumatiques à Nantes : réparation, montage, équilibrage, géométrie.",
+  "url": "https://www.pneupro-nantes.fr",
+  "telephone": "+33240507024",
+  "email": "contact@pneupro-nantes.fr",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "174 Boulevard Jules Verne",
+    "addressLocality": "Nantes",
+    "postalCode": "44000",
+    "addressCountry": "FR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 47.2101,
+    "longitude": -1.5831
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "19:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:30", "closes": "17:30" }
+  ],
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "200" },
+  "priceRange": "€€"
+}
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #07090f;
+  --black2: #0d1117;
+  --carbon: #111820;
+  --carbon2: #161e2a;
+  --gold: #4da6ff;
+  --gold2: #80c1ff;
+  --gold-dim: rgba(77,166,255,0.12);
+  --red: #0055cc;
+  --red2: #1a6fff;
+  --white: #ffffff;
+  --offwhite: #e8edf5;
+  --text-dim: rgba(232,237,245,0.42);
+  --text-mid: rgba(232,237,245,0.70);
+  --border: rgba(77,166,255,0.22);
+  --border-dim: rgba(255,255,255,0.07);
+  --silver: #b0bece;
+  --font-head: 'Barlow Condensed', sans-serif;
+  --font-body: 'Barlow', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--black);
+  color: var(--offwhite);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* CUSTOM CURSOR */
+.cursor { position: fixed; width: 10px; height: 10px; background: var(--gold); border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); transition: transform 0.1s, width 0.2s, height 0.2s, background 0.2s; mix-blend-mode: difference; }
+.cursor-ring { position: fixed; width: 36px; height: 36px; border: 1px solid rgba(77,166,255,0.5); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%, -50%); transition: transform 0.15s ease, width 0.3s, height 0.3s; }
+body:hover .cursor { opacity: 1; }
+
+/* SCROLLBAR */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--gold); }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(7,9,15,0.96);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(20px);
+}
+.nav-top { display: flex; align-items: center; justify-content: space-between; padding: 0 5vw; height: 72px; gap: 1rem; }
+.logo { font-family: var(--font-head); font-size: 2rem; font-weight: 900; color: var(--offwhite); text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; flex-shrink: 0; }
+.logo span { color: var(--gold); }
+.nav-infos { display: flex; align-items: center; gap: 2rem; }
+.nav-info { display: flex; align-items: center; gap: 0.6rem; font-size: 0.72rem; color: var(--text-mid); font-family: var(--font-body); }
+.nav-info-icon { width: 28px; height: 28px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; flex-shrink: 0; }
+.nav-info div strong { display: block; font-size: 0.78rem; color: var(--offwhite); font-weight: 600; letter-spacing: 0.03em; }
+.nav-info div small { font-size: 0.62rem; color: var(--text-dim); letter-spacing: 0.08em; text-transform: uppercase; }
+.nav-cta-btn {
+  background: transparent; color: var(--gold); padding: 0.6rem 1.6rem;
+  border: 1px solid var(--gold); font-family: var(--font-head); font-weight: 700; font-size: 0.8rem;
+  letter-spacing: 0.15em; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;
+  text-transform: uppercase; transition: background 0.3s, color 0.3s; white-space: nowrap;
+}
+.nav-cta-btn:hover { background: var(--gold); color: var(--black); }
+.nav-bottom { background: var(--carbon); display: flex; align-items: center; padding: 0 5vw; height: 38px; border-top: 1px solid var(--border-dim); }
+.nav-bottom a {
+  color: var(--text-dim); text-decoration: none; font-family: var(--font-head); font-size: 0.72rem;
+  font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 0 1.2rem;
+  height: 38px; display: flex; align-items: center; border-right: 1px solid var(--border-dim);
+  transition: color 0.2s; white-space: nowrap;
+}
+.nav-bottom a:first-child { border-left: 1px solid var(--border-dim); }
+.nav-bottom a:hover, .nav-bottom a.active { color: var(--gold); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 0.4rem; }
+.hamburger span { display: block; width: 22px; height: 1px; background: var(--offwhite); transition: 0.3s; }
+.mobile-menu { display: none; position: fixed; top: 72px; left: 0; right: 0; background: var(--black2); border-bottom: 1px solid var(--border); padding: 1.5rem 5vw; z-index: 98; flex-direction: column; }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { color: var(--offwhite); text-decoration: none; font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.9rem 0; border-bottom: 1px solid var(--border-dim); }
+
+/* HERO */
+#accueil {
+  padding-top: 110px;
+  min-height: 100vh;
+  display: flex; align-items: center;
+  position: relative; overflow: hidden;
+  background: #07090f;
+}
+.hero-bg-slide {
+  position: absolute; inset: 0; z-index: 0;
+  background-size: cover; background-position: center; background-repeat: no-repeat;
+  opacity: 0; transition: opacity 1.5s ease-in-out;
+}
+.hero-bg-slide.active { opacity: 1; }
+.hero-bg-slide:nth-child(1) { background-image: url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1800&q=90&auto=format&fit=crop'); }
+.hero-bg-slide:nth-child(2) { background-image: url('https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1800&q=90&auto=format&fit=crop'); }
+.slide-dots { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); display: flex; gap: 0.5rem; z-index: 3; }
+.slide-dot { width: 28px; height: 2px; background: rgba(255,255,255,0.25); cursor: pointer; transition: background 0.3s, width 0.3s; }
+.slide-dot.active { background: #4da6ff; width: 48px; }
+.hero-video-bg {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(160deg,
+    rgba(7,9,15,0.70) 0%,
+    rgba(7,9,15,0.45) 50%,
+    rgba(7,9,15,0.65) 100%);
+}
+
+/* DIAGONAL ACCENT LINE */
+.hero-diagonal { position: absolute; top: 0; right: 30%; width: 2px; height: 100%; background: linear-gradient(180deg, transparent, var(--gold), transparent); opacity: 0.15; transform: skewX(-15deg); z-index: 3; }
+
+.hero-inner { max-width: 1400px; margin: 0 auto; padding: 4rem 5vw; display: grid; grid-template-columns: 1fr 420px; gap: 4rem; align-items: center; width: 100%; position: relative; z-index: 3; }
+.hero-left { color: white; }
+
+.hero-badge-top {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  border: 1px solid rgba(201,168,76,0.35); padding: 0.28rem 1rem;
+  font-family: var(--font-head); font-size: 0.65rem; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem;
+}
+.badge-dot { width: 6px; height: 6px; border-radius: 50%; background: #4ade80; box-shadow: 0 0 10px rgba(74,222,128,0.8); animation: blink 2s infinite; flex-shrink: 0; }
+@keyframes blink { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
+
+.hero-left h1 {
+  font-family: var(--font-head); font-size: clamp(3.5rem, 7vw, 7rem); font-weight: 900; line-height: 0.92;
+  letter-spacing: -0.01em; text-transform: uppercase; margin-bottom: 1.8rem;
+}
+.hero-left h1 .line1 { display: block; color: var(--offwhite); }
+.hero-left h1 .line2 { display: block; color: var(--gold); font-size: 1.2em; }
+.hero-left h1 .line3 { display: block; color: rgba(240,237,232,0.25); font-size: 0.5em; letter-spacing: 0.1em; font-weight: 300; }
+
+.hero-left p { color: var(--text-mid); font-size: 0.9rem; line-height: 1.9; margin-bottom: 2.5rem; max-width: 420px; font-weight: 300; }
+.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 4rem; }
+
+.btn-gold {
+  background: var(--gold); color: var(--black); padding: 0.9rem 2.2rem;
+  font-family: var(--font-head); font-weight: 800; font-size: 0.82rem; letter-spacing: 0.15em;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;
+  text-transform: uppercase; transition: background 0.2s, transform 0.15s;
+}
+.btn-gold:hover { background: var(--gold2); transform: translateY(-2px); }
+.btn-outline-gold {
+  background: transparent; color: var(--offwhite); padding: 0.9rem 2.2rem;
+  font-family: var(--font-head); font-weight: 700; font-size: 0.82rem; letter-spacing: 0.15em;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;
+  border: 1px solid rgba(240,237,232,0.3); text-transform: uppercase;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-outline-gold:hover { border-color: var(--gold); color: var(--gold); }
+
+.hero-stats { display: flex; border: 1px solid var(--border); }
+.stat-item { flex: 1; padding: 1.3rem 1rem; border-right: 1px solid var(--border); text-align: center; position: relative; }
+.stat-item:last-child { border-right: none; }
+.stat-num { font-family: var(--font-head); font-size: 2.4rem; font-weight: 900; color: var(--gold); line-height: 1; letter-spacing: -0.02em; }
+.stat-label { font-size: 0.58rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.15em; margin-top: 0.3rem; font-family: var(--font-head); }
+
+/* RDV CARD */
+.rdv-card {
+  background: var(--carbon); border: 1px solid var(--border);
+  padding: 2rem; position: relative; overflow: hidden;
+}
+.rdv-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+.rdv-card-title { font-family: var(--font-head); font-size: 1.3rem; font-weight: 800; color: var(--offwhite); margin-bottom: 0.2rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.rdv-card-sub { font-size: 0.72rem; color: var(--text-dim); margin-bottom: 1.5rem; padding-bottom: 1.2rem; border-bottom: 1px solid var(--border-dim); letter-spacing: 0.05em; }
+.rdv-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-bottom: 0.7rem; }
+.rdv-group { display: flex; flex-direction: column; gap: 0.3rem; margin-bottom: 0.7rem; }
+.rdv-group label { font-family: var(--font-head); font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold); }
+.rdv-group input, .rdv-group select {
+  border: 1px solid var(--border-dim); background: var(--black2);
+  padding: 0.65rem 0.9rem; font-family: var(--font-body); font-size: 0.82rem; color: var(--offwhite);
+  transition: border-color 0.2s; outline: none; -webkit-appearance: none;
+}
+.rdv-group input:focus, .rdv-group select:focus { border-color: var(--gold); }
+.rdv-group input::placeholder { color: var(--text-dim); }
+.rdv-group select option { background: var(--black2); color: var(--offwhite); }
+
+/* Calendar */
+.cal-label { font-family: var(--font-head); font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold); display: block; margin-bottom: 0.5rem; }
+.calendar { border: 1px solid var(--border-dim); overflow: hidden; margin-bottom: 0.8rem; }
+.cal-header { background: var(--black2); color: var(--offwhite); display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--border); }
+.cal-header span { font-family: var(--font-head); font-weight: 700; font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.cal-nav { background: none; border: 1px solid var(--border-dim); color: var(--gold); cursor: pointer; font-size: 1rem; padding: 0.2rem 0.5rem; transition: background 0.15s, border-color 0.15s; line-height: 1; }
+.cal-nav:hover { background: var(--gold-dim); border-color: var(--gold); }
+.cal-days-hdr { display: grid; grid-template-columns: repeat(7,1fr); background: rgba(255,255,255,0.03); }
+.cal-day-name { text-align: center; font-family: var(--font-head); font-size: 0.58rem; font-weight: 700; color: var(--text-dim); padding: 0.4rem 0; text-transform: uppercase; letter-spacing: 0.08em; }
+.cal-grid { display: grid; grid-template-columns: repeat(7,1fr); gap: 1px; background: var(--border-dim); }
+.cal-cell { background: var(--black2); text-align: center; padding: 0.4rem 0; font-size: 0.75rem; cursor: pointer; transition: background 0.12s, color 0.12s; border: none; font-family: var(--font-body); color: var(--text-mid); }
+.cal-cell:hover:not(.disabled):not(.empty) { background: var(--gold-dim); color: var(--gold); }
+.cal-cell.selected { background: var(--gold); color: var(--black); font-weight: 700; }
+.cal-cell.today { color: var(--gold); font-weight: 700; }
+.cal-cell.today.selected { color: var(--black); }
+.cal-cell.disabled { color: rgba(255,255,255,0.15); cursor: not-allowed; }
+.cal-cell.empty { background: rgba(0,0,0,0.3); cursor: default; }
+
+/* Time slots */
+.time-slots { display: grid; grid-template-columns: repeat(4,1fr); gap: 0.4rem; margin-bottom: 1.2rem; }
+.time-slot {
+  border: 1px solid var(--border-dim); padding: 0.4rem 0; text-align: center;
+  font-family: var(--font-head); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.05em;
+  color: var(--text-dim); cursor: pointer; background: var(--black2); transition: all 0.15s;
+}
+.time-slot:hover:not(.unavailable) { border-color: var(--gold); color: var(--gold); background: var(--gold-dim); }
+.time-slot.selected { background: var(--gold); border-color: var(--gold); color: var(--black); }
+.time-slot.unavailable { opacity: 0.2; cursor: not-allowed; }
+
+.btn-rdv-submit {
+  width: 100%; background: var(--red); color: white; border: none;
+  padding: 1rem; font-family: var(--font-head); font-size: 0.85rem; font-weight: 800;
+  cursor: pointer; transition: background 0.2s; letter-spacing: 0.15em; text-transform: uppercase;
+  display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+}
+.btn-rdv-submit:hover { background: var(--red2); }
+.btn-rdv-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+.form-success-msg { display: none; margin-top: 0.8rem; background: rgba(74,222,128,0.08); border: 1px solid rgba(74,222,128,0.3); padding: 0.9rem; color: #4ade80; font-size: 0.78rem; font-weight: 600; text-align: center; font-family: var(--font-head); letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* MOBILE CONTACT SECTION — affiché uniquement sur tablette/mobile */
+#contact-mobile {
+  display: none;
+  background: var(--black2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 4rem 5vw;
+}
+.contact-mobile-inner { max-width: 700px; margin: 0 auto; }
+.contact-mobile-inner .rdv-card { display: block !important; }
+
+/* SECTIONS */
+section { padding: 6rem 5vw; }
+.section-wrap { max-width: 1280px; margin: 0 auto; }
+.section-eyebrow {
+  font-family: var(--font-head); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.25em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem;
+  display: flex; align-items: center; gap: 0.8rem;
+}
+.section-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gold); }
+.section-title {
+  font-family: var(--font-head); font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 900;
+  color: var(--offwhite); line-height: 0.95; letter-spacing: -0.01em; text-transform: uppercase; margin-bottom: 0.8rem;
+}
+.section-sub { color: var(--text-mid); font-size: 0.88rem; line-height: 1.8; max-width: 480px; font-weight: 300; }
+
+/* SERVICES */
+#services { background: var(--black2); border-top: 1px solid var(--border-dim); border-bottom: 1px solid var(--border-dim); }
+.services-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem; }
+.services-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--border-dim); border: 1px solid var(--border-dim); }
+.service-card {
+  background: var(--black); padding: 2rem 1.6rem; transition: background 0.3s;
+  position: relative; overflow: hidden;
+}
+.service-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--gold); transition: width 0.4s; }
+.service-card:hover { background: var(--carbon); }
+.service-card:hover::after { width: 100%; }
+.service-icon { font-size: 1.5rem; margin-bottom: 1rem; display: block; }
+.service-name { font-family: var(--font-head); font-size: 1rem; font-weight: 800; color: var(--offwhite); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.service-desc { font-size: 0.78rem; color: var(--text-dim); line-height: 1.65; font-weight: 300; }
+.service-price { margin-top: 1rem; font-family: var(--font-head); font-size: 1.1rem; font-weight: 800; color: var(--gold); letter-spacing: 0.03em; }
+.service-badge { position: absolute; top: 0; right: 0; background: var(--red); color: white; font-family: var(--font-head); font-size: 0.55rem; font-weight: 700; padding: 0.2rem 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; }
+
+/* TARIFS */
+#tarifs { background: #07090f; position: relative; overflow: hidden; }
+#tarifs .tarifs-bg-slide {
+  position: absolute; inset: 0; z-index: 0;
+  background-size: cover; background-position: center; background-repeat: no-repeat;
+  opacity: 0; transition: opacity 1.5s ease-in-out;
+}
+#tarifs .tarifs-bg-slide.active { opacity: 1; }
+#tarifs .tarifs-bg-slide:nth-child(1) { background-image: url('https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1800&q=90&auto=format&fit=crop'); }
+#tarifs .tarifs-bg-slide:nth-child(2) { background-image: url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1800&q=90&auto=format&fit=crop'); }
+#tarifs .tarifs-overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(160deg, rgba(7,9,15,0.88) 0%, rgba(7,9,15,0.75) 50%, rgba(7,9,15,0.88) 100%);
+}
+#tarifs .section-wrap { position: relative; z-index: 2; }
+#tarifs .tarifs-dots { position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%); display: flex; gap: 0.5rem; z-index: 3; }
+#tarifs .tarifs-dot { width: 28px; height: 2px; background: rgba(255,255,255,0.25); cursor: pointer; transition: background 0.3s, width 0.3s; }
+#tarifs .tarifs-dot.active { background: #4da6ff; width: 48px; }
+.tarifs-layout { display: grid; grid-template-columns: 1fr 2.2fr; gap: 5rem; align-items: start; margin-top: 3rem; }
+.tarifs-side { position: sticky; top: 115px; }
+.tarifs-side p { color: var(--text-mid); font-size: 0.85rem; line-height: 1.8; margin-bottom: 1.2rem; font-weight: 300; }
+.tarif-cta-box { border: 1px solid var(--border); padding: 1.6rem; position: relative; }
+.tarif-cta-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), transparent); }
+.tarif-cta-box p { color: var(--text-mid); margin-bottom: 0.7rem; font-size: 0.8rem; font-weight: 300; }
+.tarif-cta-box a { color: var(--gold); font-family: var(--font-head); font-weight: 700; font-size: 0.85rem; text-decoration: none; letter-spacing: 0.1em; }
+.tarif-table-wrap { border: 1px solid var(--border-dim); overflow: hidden; }
+.tarif-table { width: 100%; border-collapse: collapse; }
+.tarif-table th { background: var(--carbon2); color: var(--gold); padding: 0.9rem 1.4rem; text-align: left; font-family: var(--font-head); font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; }
+.tarif-table td { padding: 1rem 1.4rem; border-bottom: 1px solid var(--border-dim); color: var(--text-mid); font-size: 0.82rem; font-weight: 300; }
+.tarif-table tr:last-child td { border-bottom: none; }
+.tarif-table tbody tr:hover td { background: rgba(77,166,255,0.04); color: var(--offwhite); }
+.tarif-table .price { font-family: var(--font-head); font-weight: 800; font-size: 1rem; color: var(--gold); }
+.tarif-note { color: var(--text-dim); font-size: 0.7rem; margin-top: 1rem; letter-spacing: 0.05em; }
+
+/* CONSEILS */
+#conseils { background: var(--black2); }
+.tires-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border-dim); border: 1px solid var(--border-dim); margin-top: 3rem; }
+.tire-card { background: var(--black); padding: 2.2rem; transition: background 0.3s; }
+.tire-card:hover { background: var(--carbon); }
+.tire-card-season { font-family: var(--font-head); font-size: 1.2rem; font-weight: 900; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.summer { color: #d97706; }
+.winter { color: #60a5fa; }
+.allseason { color: #4ade80; }
+.tire-card p { color: var(--text-dim); font-size: 0.82rem; margin-bottom: 1rem; line-height: 1.7; font-weight: 300; }
+.tire-card ul { list-style: none; }
+.tire-card ul li { color: var(--text-mid); font-size: 0.78rem; padding: 0.35rem 0; border-top: 1px solid var(--border-dim); font-weight: 300; }
+.tire-card ul li:first-child { border-top: none; }
+.tips-section { margin-top: 3rem; border: 1px solid var(--border-dim); padding: 2.5rem; background: var(--carbon); position: relative; }
+.tips-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+.tips-section h3 { font-family: var(--font-head); font-size: 1.3rem; font-weight: 800; color: var(--offwhite); margin-bottom: 1.8rem; text-transform: uppercase; letter-spacing: 0.08em; }
+.tips-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap: 1.5rem; }
+.tip-item { border-left: 2px solid var(--gold); padding-left: 1rem; }
+.tip-item strong { display: block; font-family: var(--font-head); font-size: 0.82rem; color: var(--offwhite); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.08em; }
+.tip-item p { color: var(--text-dim); font-size: 0.75rem; line-height: 1.65; font-weight: 300; }
+
+/* FAQ */
+#faq { background: var(--black); }
+.faq-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; margin-top: 3rem; }
+.faq-left { position: sticky; top: 140px; }
+.faq-left p { color: var(--text-mid); font-size: 0.85rem; line-height: 1.8; margin: 1rem 0 1.5rem; font-weight: 300; }
+.faq-cta { border: 1px solid var(--border-dim); padding: 1.2rem; }
+.faq-cta p { color: var(--text-dim); font-size: 0.78rem; margin-bottom: 0.5rem; font-weight: 300; }
+.faq-cta a { color: var(--gold); font-family: var(--font-head); font-weight: 700; font-size: 0.8rem; text-decoration: none; letter-spacing: 0.1em; }
+.faq-item { border: 1px solid var(--border-dim); margin-bottom: 0.5rem; transition: border-color 0.2s; }
+.faq-item:hover { border-color: var(--border); }
+.faq-q {
+  width: 100%; background: none; border: none; color: var(--text-mid); text-align: left;
+  padding: 1.2rem 1.4rem; font-family: var(--font-head); font-size: 0.9rem; font-weight: 700;
+  cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 0.8rem;
+  transition: color 0.2s; letter-spacing: 0.05em; text-transform: uppercase;
+}
+.faq-q:hover { color: var(--offwhite); }
+.faq-icon {
+  width: 22px; height: 22px; border: 1px solid var(--border-dim); color: var(--gold);
+  display: flex; align-items: center; justify-content: center; font-size: 0.8rem;
+  flex-shrink: 0; font-style: normal; transition: background 0.25s, transform 0.3s;
+}
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; color: var(--text-dim); font-size: 0.82rem; line-height: 1.8; padding: 0 1.4rem; font-weight: 300; }
+.faq-item.open .faq-a { max-height: 200px; padding: 0 1.4rem 1.2rem; }
+.faq-item.open .faq-q { color: var(--offwhite); }
+.faq-item.open .faq-icon { transform: rotate(45deg); background: var(--gold); color: var(--black); border-color: var(--gold); }
+
+/* AVIS */
+#avis { background: var(--black2); }
+.avis-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; flex-wrap: wrap; gap: 1.2rem; }
+.avis-score-wrap { display: flex; align-items: center; gap: 1rem; border: 1px solid var(--border); padding: 1rem 1.8rem; }
+.avis-score-num { font-family: var(--font-head); font-size: 3.5rem; font-weight: 900; color: var(--gold); line-height: 1; }
+.avis-stars { color: var(--gold); font-size: 0.85rem; letter-spacing: 3px; }
+.avis-count { color: var(--text-dim); font-size: 0.68rem; margin-top: 0.15rem; letter-spacing: 0.08em; text-transform: uppercase; font-family: var(--font-head); }
+.avis-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; background: var(--border-dim); border: 1px solid var(--border-dim); }
+.avis-card { background: var(--black); padding: 2rem; transition: background 0.3s; position: relative; }
+.avis-card:hover { background: var(--carbon); }
+.avis-stars-sm { color: var(--gold); font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 1rem; }
+.avis-text { color: var(--text-mid); font-size: 0.85rem; line-height: 1.8; margin-bottom: 1.2rem; font-style: italic; font-weight: 300; }
+.avis-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid var(--border-dim); }
+.avis-author { font-family: var(--font-head); font-weight: 700; font-size: 0.85rem; color: var(--offwhite); letter-spacing: 0.08em; text-transform: uppercase; }
+.avis-date { color: var(--text-dim); font-size: 0.65rem; letter-spacing: 0.08em; }
+
+/* A PROPOS */
+#apropos { background: var(--black); }
+.apropos-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 5rem; align-items: center; margin-top: 3rem; }
+.apropos-visual {
+  aspect-ratio: 1; border: 1px solid var(--border); display: flex; align-items: center;
+  justify-content: center; overflow: hidden; position: relative;
+  background: radial-gradient(ellipse at center, #0d1a2e 0%, var(--black) 100%);
+}
+.apropos-visual::before {
+  content: ''; position: absolute; inset: 0; opacity: 0.04;
+  background-image: repeating-linear-gradient(45deg, #fff 0px, #fff 1px, transparent 1px, transparent 8px),
+                    repeating-linear-gradient(-45deg, #fff 0px, #fff 1px, transparent 1px, transparent 8px);
+}
+.apropos-visual-content { text-align: center; color: white; position: relative; z-index: 1; }
+.apropos-visual-icon { font-size: 5rem; display: block; margin-bottom: 1rem; }
+.apropos-visual-label { font-family: var(--font-head); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+.apropos-since { position: absolute; top: 1.2rem; right: 1.2rem; background: var(--red); font-family: var(--font-head); padding: 0.3rem 0.9rem; font-size: 0.75rem; font-weight: 800; color: white; letter-spacing: 0.08em; }
+.apropos-tag { display: inline-block; font-family: var(--font-head); font-size: 0.62rem; font-weight: 700; color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1.2rem; border: 1px solid var(--border); padding: 0.3rem 0.9rem; }
+.apropos-text p { color: var(--text-mid); margin-bottom: 1rem; font-size: 0.85rem; line-height: 1.85; font-weight: 300; }
+.team-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; margin-top: 2rem; background: var(--border-dim); border: 1px solid var(--border-dim); }
+.team-member { background: var(--black2); padding: 1.3rem; text-align: center; transition: background 0.2s; }
+.team-member:hover { background: var(--carbon); }
+.team-avatar { width: 42px; height: 42px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; margin: 0 auto 0.7rem; }
+.team-member strong { display: block; font-family: var(--font-head); font-size: 0.82rem; color: var(--offwhite); margin-bottom: 0.2rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.team-member span { color: var(--text-dim); font-size: 0.65rem; letter-spacing: 0.08em; }
+
+/* MAP — vraie carte Google Maps */
+#localisation { height: 380px; position: relative; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+#localisation iframe { width: 100%; height: 100%; border: none; display: block; filter: grayscale(0.3) brightness(0.9); }
+.map-overlay {
+  position: absolute; bottom: 1.5rem; left: 1.5rem; z-index: 1;
+  background: rgba(7,9,15,0.92); border: 1px solid var(--border); padding: 1rem 1.4rem;
+  backdrop-filter: blur(8px);
+}
+.map-overlay strong { display: block; font-family: var(--font-head); font-size: 0.85rem; color: var(--offwhite); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.3rem; }
+.map-overlay span { font-size: 0.72rem; color: var(--text-dim); }
+.map-overlay a { display: inline-block; margin-top: 0.7rem; color: var(--gold); font-family: var(--font-head); font-size: 0.7rem; font-weight: 700; text-decoration: none; letter-spacing: 0.1em; border: 1px solid var(--gold); padding: 0.3rem 0.8rem; transition: background 0.2s, color 0.2s; }
+.map-overlay a:hover { background: var(--gold); color: var(--black); }
+
+/* FOOTER */
+footer { background: var(--carbon2); color: var(--text-dim); padding: 4rem 5vw 2rem; border-top: 1px solid var(--border); }
+.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 4rem; margin-bottom: 3rem; }
+.footer-logo { font-family: var(--font-head); font-size: 1.8rem; font-weight: 900; color: var(--offwhite); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 1rem; }
+.footer-logo span { color: var(--gold); }
+.footer-brand p { font-size: 0.8rem; line-height: 1.8; font-weight: 300; max-width: 280px; }
+.footer-col h4 { font-family: var(--font-head); font-size: 0.65rem; font-weight: 700; color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1.2rem; }
+.footer-col a { display: block; color: var(--text-dim); text-decoration: none; font-size: 0.8rem; margin-bottom: 0.6rem; transition: color 0.2s; font-weight: 300; }
+.footer-col a:hover { color: var(--offwhite); }
+.footer-col p { font-size: 0.78rem; line-height: 1.8; font-weight: 300; }
+.footer-bottom { border-top: 1px solid var(--border-dim); padding-top: 1.5rem; display: flex; justify-content: space-between; font-size: 0.68rem; letter-spacing: 0.08em; flex-wrap: wrap; gap: 0.5rem; }
+
+/* PHONE + WHATSAPP BUBBLES */
+.float-btns { position: fixed; bottom: 2rem; right: 2rem; z-index: 200; display: flex; flex-direction: column; gap: 0.7rem; align-items: flex-end; }
+.phone-bubble {
+  width: 52px; height: 52px; display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem; text-decoration: none; border: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.phone-bubble { background: var(--gold); color: var(--black); box-shadow: 0 4px 20px rgba(77,166,255,0.4); }
+.phone-bubble:hover { transform: scale(1.1); box-shadow: 0 8px 30px rgba(77,166,255,0.7); }
+
+/* REVEAL ANIMATION */
+.reveal { opacity: 1; transform: translateY(0); transition: opacity 0.7s ease, transform 0.7s ease; }
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transform: translateY(30px); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;gap:3rem}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .tarifs-layout{grid-template-columns:1fr;gap:2rem}
+  .tarifs-side{position:relative;top:0}
+  .faq-layout{grid-template-columns:1fr;gap:2rem}
+  .faq-left{position:relative;top:0}
+  .apropos-grid{grid-template-columns:1fr;gap:2rem}
+  .apropos-visual{aspect-ratio:16/6}
+  .avis-grid{grid-template-columns:1fr}
+  .tires-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2.5rem}
+  .nav-infos{display:none}
+  .rdv-card{display:none}
+  #contact-mobile{display:block}
+}
+@media(max-width:600px){
+  .nav-bottom{display:none}
+  .hamburger{display:flex}
+  .hero-left h1{font-size:3.5rem}
+  .hero-stats{flex-direction:column}
+  .stat-item{border-right:none;border-bottom:1px solid var(--border)}
+  .stat-item:last-child{border-bottom:none}
+  .services-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .team-grid{grid-template-columns:1fr 1fr}
+  .time-slots{grid-template-columns:repeat(3,1fr)}
+  .rdv-row{grid-template-columns:1fr}
+  .cursor,.cursor-ring{display:none}
+  body{cursor:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- CUSTOM CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-top">
+    <a href="#accueil" class="logo">Pneu<span>Pro</span></a>
+    <div class="nav-infos">
+      <div class="nav-info">
+        <div class="nav-info-icon">📍</div>
+        <div><small>Adresse</small><strong>174 Bd Jules Verne, Nantes</strong></div>
+      </div>
+      <div class="nav-info">
+        <div class="nav-info-icon">🕒</div>
+        <div><small>Horaires</small><strong>Lun–Ven 8h–19h · Sam 8h30–17h30</strong></div>
+      </div>
+      <div class="nav-info">
+        <div class="nav-info-icon">📞</div>
+        <div><small>Téléphone</small><strong><a href="tel:+33240507024" style="color:var(--offwhite);text-decoration:none">02 40 50 70 24</a></strong></div>
+      </div>
+    </div>
+    <a href="#contact" class="nav-cta-btn">— Prendre RDV</a>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-bottom">
+    <a href="#contact">Prendre RDV</a>
+    <a href="#services">Services</a>
+    <a href="#tarifs">Tarifs</a>
+    <a href="#conseils">Conseils</a>
+    <a href="#faq">FAQ</a>
+    <a href="#avis">Avis</a>
+    <a href="#apropos">À Propos</a>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#contact">Prendre RDV</a>
+  <a href="#services">Services</a>
+  <a href="#tarifs">Tarifs</a>
+  <a href="#conseils">Conseils</a>
+  <a href="#faq">FAQ</a>
+  <a href="#avis">Avis</a>
+  <a href="#apropos">À propos</a>
+</div>
+
+<!-- HERO -->
+<section id="accueil">
+  <div class="hero-bg-slide active"></div>
+  <div class="hero-bg-slide"></div>
+  <div class="hero-video-bg"></div>
+  <div class="hero-diagonal"></div>
+  <div class="slide-dots">
+    <div class="slide-dot active" onclick="goToSlide(0)"></div>
+    <div class="slide-dot" onclick="goToSlide(1)"></div>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-badge-top"><div class="badge-dot"></div>Atelier ouvert · Lun–Sam</div>
+      <h1>
+        <span class="line1">Expert</span>
+        <span class="line2">Pneus</span>
+        <span class="line3">Nantes · Depuis 2012</span>
+      </h1>
+      <p>Réparation, montage, équilibrage et géométrie de précision. Service rapide, prix transparents, sans mauvaise surprise. Ouvert 6j/7.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-gold">— Prendre rendez-vous</a>
+        <a href="tel:+33240507024" class="btn-outline-gold">📞 02 40 50 70 24</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item"><div class="stat-num">+12</div><div class="stat-label">Années d'expérience</div></div>
+        <div class="stat-item"><div class="stat-num">4.9</div><div class="stat-label">Note Google</div></div>
+        <div class="stat-item"><div class="stat-num">30'</div><div class="stat-label">Temps moyen</div></div>
+      </div>
+    </div>
+
+    <!-- RDV CARD (desktop) -->
+    <div class="rdv-card" id="contact">
+      <div class="rdv-card-title">Prendre rendez-vous</div>
+      <div class="rdv-card-sub">Choisissez votre jour et votre créneau horaire</div>
+      <div class="rdv-row">
+        <div class="rdv-group"><label>Prénom *</label><input type="text" id="fname" placeholder="Jean" autocomplete="given-name"></div>
+        <div class="rdv-group"><label>Nom</label><input type="text" id="lname" placeholder="Dupont" autocomplete="family-name"></div>
+      </div>
+      <div class="rdv-row">
+        <div class="rdv-group"><label>Téléphone *</label><input type="tel" id="phone" placeholder="06 12 34 56 78" autocomplete="tel"></div>
+        <div class="rdv-group"><label>Email</label><input type="email" id="email" placeholder="jean@email.fr" autocomplete="email"></div>
+      </div>
+      <div class="rdv-group">
+        <label>Prestation *</label>
+        <select id="service">
+          <option value="">Sélectionner un service</option>
+          <option>Réparation crevaison</option>
+          <option>Changement de pneus</option>
+          <option>Équilibrage</option>
+          <option>Permutation</option>
+          <option>Parallélisme / Géométrie</option>
+          <option>Forfait hivernage</option>
+          <option>Autre / Devis</option>
+        </select>
+      </div>
+      <span class="cal-label">Choisir un jour *</span>
+      <div class="calendar">
+        <div class="cal-header">
+          <button class="cal-nav" onclick="changeMonth(-1)">&#8249;</button>
+          <span id="calMonthYear"></span>
+          <button class="cal-nav" onclick="changeMonth(1)">&#8250;</button>
+        </div>
+        <div class="cal-days-hdr">
+          <div class="cal-day-name">Lun</div><div class="cal-day-name">Mar</div><div class="cal-day-name">Mer</div>
+          <div class="cal-day-name">Jeu</div><div class="cal-day-name">Ven</div><div class="cal-day-name">Sam</div><div class="cal-day-name">Dim</div>
+        </div>
+        <div class="cal-grid" id="calGrid"></div>
+      </div>
+      <input type="hidden" id="date">
+      <label class="cal-label">Choisir une heure *</label>
+      <div class="time-slots">
+        <button class="time-slot" onclick="selectTime(this,'08:00')">08:00</button>
+        <button class="time-slot" onclick="selectTime(this,'08:30')">08:30</button>
+        <button class="time-slot" onclick="selectTime(this,'09:00')">09:00</button>
+        <button class="time-slot" onclick="selectTime(this,'09:30')">09:30</button>
+        <button class="time-slot" onclick="selectTime(this,'10:00')">10:00</button>
+        <button class="time-slot" onclick="selectTime(this,'10:30')">10:30</button>
+        <button class="time-slot" onclick="selectTime(this,'11:00')">11:00</button>
+        <button class="time-slot" onclick="selectTime(this,'11:30')">11:30</button>
+        <button class="time-slot" onclick="selectTime(this,'14:00')">14:00</button>
+        <button class="time-slot" onclick="selectTime(this,'14:30')">14:30</button>
+        <button class="time-slot" onclick="selectTime(this,'15:00')">15:00</button>
+        <button class="time-slot" onclick="selectTime(this,'15:30')">15:30</button>
+        <button class="time-slot" onclick="selectTime(this,'16:00')">16:00</button>
+        <button class="time-slot" onclick="selectTime(this,'16:30')">16:30</button>
+        <button class="time-slot" onclick="selectTime(this,'17:00')">17:00</button>
+        <button class="time-slot" onclick="selectTime(this,'17:30')">17:30</button>
+      </div>
+      <input type="hidden" id="heure">
+      <button class="btn-rdv-submit" onclick="submitForm()">Confirmer le rendez-vous →</button>
+      <div class="form-success-msg" id="formSuccess">✓ Votre demande a bien été envoyée — Confirmation sous 2h.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT MOBILE — visible uniquement sur tablette/mobile -->
+<div id="contact-mobile">
+  <div class="contact-mobile-inner">
+    <div class="section-eyebrow" style="margin-bottom:1rem">Rendez-vous</div>
+    <h2 class="section-title" style="margin-bottom:2rem">Prendre Rendez-vous</h2>
+    <div class="rdv-card" id="contact-m">
+      <div class="rdv-card-title">Réserver un créneau</div>
+      <div class="rdv-card-sub">Remplissez le formulaire — confirmation sous 2h</div>
+      <div class="rdv-row">
+        <div class="rdv-group"><label>Prénom *</label><input type="text" id="fname2" placeholder="Jean" autocomplete="given-name"></div>
+        <div class="rdv-group"><label>Nom</label><input type="text" id="lname2" placeholder="Dupont" autocomplete="family-name"></div>
+      </div>
+      <div class="rdv-row">
+        <div class="rdv-group"><label>Téléphone *</label><input type="tel" id="phone2" placeholder="06 12 34 56 78" autocomplete="tel"></div>
+        <div class="rdv-group"><label>Email</label><input type="email" id="email2" placeholder="jean@email.fr" autocomplete="email"></div>
+      </div>
+      <div class="rdv-group">
+        <label>Prestation *</label>
+        <select id="service2">
+          <option value="">Sélectionner un service</option>
+          <option>Réparation crevaison</option>
+          <option>Changement de pneus</option>
+          <option>Équilibrage</option>
+          <option>Permutation</option>
+          <option>Parallélisme / Géométrie</option>
+          <option>Forfait hivernage</option>
+          <option>Autre / Devis</option>
+        </select>
+      </div>
+      <span class="cal-label">Choisir un jour *</span>
+      <div class="calendar">
+        <div class="cal-header">
+          <button class="cal-nav" onclick="changeMonth2(-1)">&#8249;</button>
+          <span id="calMonthYear2"></span>
+          <button class="cal-nav" onclick="changeMonth2(1)">&#8250;</button>
+        </div>
+        <div class="cal-days-hdr">
+          <div class="cal-day-name">Lun</div><div class="cal-day-name">Mar</div><div class="cal-day-name">Mer</div>
+          <div class="cal-day-name">Jeu</div><div class="cal-day-name">Ven</div><div class="cal-day-name">Sam</div><div class="cal-day-name">Dim</div>
+        </div>
+        <div class="cal-grid" id="calGrid2"></div>
+      </div>
+      <input type="hidden" id="date2">
+      <label class="cal-label">Choisir une heure *</label>
+      <div class="time-slots" id="timeSlots2">
+        <button class="time-slot" onclick="selectTime2(this,'08:00')">08:00</button>
+        <button class="time-slot" onclick="selectTime2(this,'08:30')">08:30</button>
+        <button class="time-slot" onclick="selectTime2(this,'09:00')">09:00</button>
+        <button class="time-slot" onclick="selectTime2(this,'09:30')">09:30</button>
+        <button class="time-slot" onclick="selectTime2(this,'10:00')">10:00</button>
+        <button class="time-slot" onclick="selectTime2(this,'10:30')">10:30</button>
+        <button class="time-slot" onclick="selectTime2(this,'11:00')">11:00</button>
+        <button class="time-slot" onclick="selectTime2(this,'11:30')">11:30</button>
+        <button class="time-slot" onclick="selectTime2(this,'14:00')">14:00</button>
+        <button class="time-slot" onclick="selectTime2(this,'14:30')">14:30</button>
+        <button class="time-slot" onclick="selectTime2(this,'15:00')">15:00</button>
+        <button class="time-slot" onclick="selectTime2(this,'15:30')">15:30</button>
+        <button class="time-slot" onclick="selectTime2(this,'16:00')">16:00</button>
+        <button class="time-slot" onclick="selectTime2(this,'16:30')">16:30</button>
+        <button class="time-slot" onclick="selectTime2(this,'17:00')">17:00</button>
+        <button class="time-slot" onclick="selectTime2(this,'17:30')">17:30</button>
+      </div>
+      <input type="hidden" id="heure2">
+      <button class="btn-rdv-submit" onclick="submitForm2()">Confirmer le rendez-vous →</button>
+      <div class="form-success-msg" id="formSuccess2">✓ Votre demande a bien été envoyée — Confirmation sous 2h.</div>
+    </div>
+
+    <div style="margin-top:2rem">
+      <a href="tel:+33240507024" class="btn-gold" style="justify-content:center;display:inline-flex;width:100%">📞 Appeler</a>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-wrap">
+    <div class="services-header reveal">
+      <div>
+        <div class="section-eyebrow">Ce que nous faisons</div>
+        <h2 class="section-title">Nos Services</h2>
+      </div>
+      <p class="section-sub" style="max-width:300px">Interventions rapides par des techniciens expérimentés depuis 2012.</p>
+    </div>
+    <div class="services-grid reveal">
+      <div class="service-card"><div class="service-badge">Rapide</div><div class="service-icon">🔧</div><div class="service-name">Réparation Crevaison</div><p class="service-desc">Diagnostic gratuit. Réparation certifiée norme ETRTO. En 20 minutes.</p><div class="service-price">Dès 15 €</div></div>
+      <div class="service-card"><div class="service-icon">🔄</div><div class="service-name">Montage & Équilibrage</div><p class="service-desc">Machine sans mors pour jantes alu. Équilibrage dynamique inclus. Toutes dimensions.</p><div class="service-price">Dès 25 €</div></div>
+      <div class="service-card"><div class="service-badge">Populaire</div><div class="service-icon">❄️</div><div class="service-name">Forfait Hivernage</div><p class="service-desc">4 pneus hiver + équilibrage + stockage sécurisé. Prêt en 1h.</p><div class="service-price">149 €</div></div>
+      <div class="service-card"><div class="service-icon">🏎️</div><div class="service-name">Géométrie</div><p class="service-desc">Banc numérique. Réglage du parallélisme pour une direction précise.</p><div class="service-price">Dès 60 €</div></div>
+      <div class="service-card"><div class="service-icon">⚖️</div><div class="service-name">Permutation</div><p class="service-desc">Rotation croisée AV/AR pour une usure uniforme.</p><div class="service-price">40 €</div></div>
+      <div class="service-card"><div class="service-icon">💨</div><div class="service-name">Gonflage Azote</div><p class="service-desc">Pression stable par tous les temps. Pour véhicules hautes performances.</p><div class="service-price">5 €/roue</div></div>
+      <div class="service-card"><div class="service-icon">📦</div><div class="service-name">Stockage Pneus</div><p class="service-desc">Stockage hors-saison sécurisé, nettoyage et référencement inclus.</p><div class="service-price">49 €/saison</div></div>
+      <div class="service-card" style="background:var(--carbon2);border:none">
+        <div class="service-icon">📞</div>
+        <div class="service-name" style="color:var(--gold)">Besoin d'aide ?</div>
+        <p class="service-desc">Vous avez un besoin spécifique ? Contactez-nous pour un devis gratuit.</p>
+        <a href="#contact" style="margin-top:1rem;display:inline-block;font-family:var(--font-head);font-size:0.72rem;font-weight:700;color:var(--gold);letter-spacing:0.1em;text-decoration:none;border:1px solid var(--gold);padding:0.45rem 1rem;">→ CONTACT</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TARIFS -->
+<section id="tarifs">
+  <div class="tarifs-bg-slide active"></div>
+  <div class="tarifs-bg-slide"></div>
+  <div class="tarifs-overlay"></div>
+  <div class="tarifs-dots">
+    <div class="tarifs-dot active" onclick="goToTarifsSlide(0)"></div>
+    <div class="tarifs-dot" onclick="goToTarifsSlide(1)"></div>
+  </div>
+  <div class="section-wrap">
+    <div class="section-eyebrow reveal">Transparence totale</div>
+    <h2 class="section-title reveal">Grille Tarifaire</h2>
+    <div class="tarifs-layout reveal">
+      <div class="tarifs-side">
+        <p>Nos prix sont affichés sans ambiguïté. Pas de surfacturation, pas de mauvaise surprise en caisse.</p>
+        <p>Devis gratuit sur place ou par téléphone pour toute intervention spécifique.</p>
+        <div class="tarif-cta-box">
+          <p>Besoin d'un devis personnalisé ?</p>
+          <a href="tel:+33240507024">→ 02 40 50 70 24</a>
+        </div>
+      </div>
+      <div>
+        <div class="tarif-table-wrap">
+          <table class="tarif-table">
+            <thead><tr><th>Prestation</th><th>Description</th><th>Prix</th></tr></thead>
+            <tbody>
+              <tr><td>Réparation crevaison</td><td>Par obturateur interne (mèche)</td><td class="price">15 €</td></tr>
+              <tr><td>Montage / Démontage</td><td>Par pneu, jante acier ou alu jusqu'à 18"</td><td class="price">25 €</td></tr>
+              <tr><td>Montage / Démontage 19"–22"</td><td>Grands diamètres et pneus runflat</td><td class="price">35 €</td></tr>
+              <tr><td>Équilibrage</td><td>Par roue, plombs inclus</td><td class="price">12 €</td></tr>
+              <tr><td>Permutation 4 roues</td><td>Rotation croisée AV/AR</td><td class="price">40 €</td></tr>
+              <tr><td>Gonflage azote</td><td>Par roue</td><td class="price">5 €</td></tr>
+              <tr><td>Parallélisme AV (2 roues)</td><td>Réglage électronique</td><td class="price">60 €</td></tr>
+              <tr><td>Parallélisme 4 roues</td><td>Réglage complet</td><td class="price">90 €</td></tr>
+              <tr><td>Forfait hivernage</td><td>4 pneus + équilibrage + stockage</td><td class="price">149 €</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="tarif-note">* Tarifs indicatifs hors fourniture des pneus. TVA 20% incluse.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONSEILS -->
+<section id="conseils">
+  <div class="section-wrap">
+    <div class="section-eyebrow reveal">Guide pratique</div>
+    <h2 class="section-title reveal">Bien Choisir ses Pneus</h2>
+    <p class="section-sub reveal">Été, hiver ou 4 saisons — chaque usage a ses exigences.</p>
+    <div class="tires-grid reveal">
+      <div class="tire-card"><div class="tire-card-season summer">☀ Pneus Été</div><p>Pour températures supérieures à <strong>7°C</strong>. Gomme dure, adhérence optimale sur sol chaud.</p><ul><li>✓ Meilleure tenue de route sèche</li><li>✓ Freinage court sur mouillé</li><li>✓ Faible résistance au roulement</li><li>✗ Inefficace sous 7°C</li></ul></div>
+      <div class="tire-card"><div class="tire-card-season winter">❄ Pneus Hiver</div><p>Pour températures <strong>inférieures à 7°C</strong>. Gomme souple, grip sur neige et verglas.</p><ul><li>✓ Grip sur neige et glace</li><li>✓ Freinage court par grand froid</li><li>✓ Traction en montée</li><li>✗ S'use vite sur route sèche chaude</li></ul></div>
+      <div class="tire-card"><div class="tire-card-season allseason">⇄ 4 Saisons</div><p>Compromis polyvalent pour régions sans hiver extrême.</p><ul><li>✓ Praticité (pas de changement)</li><li>✓ Homologué neige légère</li><li>! Moins performant qu'un spécialisé</li><li>✓ Économique sur le long terme</li></ul></div>
+    </div>
+    <div class="tips-section reveal">
+      <h3>Conseils d'Entretien</h3>
+      <div class="tips-grid">
+        <div class="tip-item"><strong>🔵 Pression</strong><p>Vérifiez à froid tous les mois. Sous-gonflé = surconsommation et usure accélérée.</p></div>
+        <div class="tip-item"><strong>📏 Usure</strong><p>La profondeur légale minimum est de 1,6 mm. En dessous, danger et amende.</p></div>
+        <div class="tip-item"><strong>📅 Âge</strong><p>Un pneu de plus de 5–6 ans doit être inspecté même s'il est peu usé.</p></div>
+        <div class="tip-item"><strong>⚖️ Équilibrage</strong><p>Faites équilibrer toutes les 15 000 km ou après chaque choc.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-wrap">
+    <div class="faq-layout">
+      <div class="faq-left reveal">
+        <div class="section-eyebrow">Questions fréquentes</div>
+        <h2 class="section-title">FAQ</h2>
+        <p>Toutes les réponses à vos questions sur nos prestations, délais, tarifs et conseils pneumatiques.</p>
+        <div class="faq-cta">
+          <p>Une question spécifique ?</p>
+          <a href="tel:+33240507024">→ Appelez-nous directement</a>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Réparez-vous tous types de crevaisons ? <span class="faq-icon">+</span></button><div class="faq-a">Nous réparons les crevaisons réparables selon la norme ETRTO : perforations dans la bande de roulement jusqu'à 6mm. Les flancs endommagés, décollements ou pneus runflat à plat ne peuvent pas être réparés.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">À quelle fréquence changer ses pneus ? <span class="faq-icon">+</span></button><div class="faq-a">En moyenne tous les 30 000 à 50 000 km, ou tous les 5–6 ans maximum. Cela dépend de votre conduite et de la qualité du pneu.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Faut-il équilibrer après chaque montage ? <span class="faq-icon">+</span></button><div class="faq-a">Oui. L'équilibrage est systématiquement inclus dans nos forfaits de montage. Sans équilibrage, vous risquez des vibrations et une détérioration prématurée des amortisseurs.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Puis-je venir sans rendez-vous ? <span class="faq-icon">+</span></button><div class="faq-a">Oui, nous acceptons les passages selon disponibilité. Mais nous recommandons de réserver, surtout en période de changement de saison (oct–nov et mars–avril).</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Vous stockez les pneus hors-saison ? <span class="faq-icon">+</span></button><div class="faq-a">Oui ! Stockage sécurisé pour 49 €/saison. Vos pneus sont nettoyés, référencés et stockés dans des conditions optimales.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AVIS -->
+<section id="avis">
+  <div class="section-wrap">
+    <div class="avis-header reveal">
+      <div>
+        <div class="section-eyebrow">Ce que disent nos clients</div>
+        <h2 class="section-title">Avis Clients</h2>
+      </div>
+      <div class="avis-score-wrap">
+        <div class="avis-score-num">4.9</div>
+        <div>
+          <div class="avis-stars">★★★★★</div>
+          <div class="avis-count">200+ avis Google vérifiés</div>
+        </div>
+      </div>
+    </div>
+    <div class="avis-grid reveal">
+      <div class="avis-card"><div class="avis-stars-sm">★★★★★</div><p class="avis-text">Crevaison réparée en 20 minutes chrono. Tarif très correct, équipe pro et sympathique. Je recommande à 100% !</p><div class="avis-footer"><div class="avis-author">Marie L.</div><div class="avis-date">Jan 2025 · Google</div></div></div>
+      <div class="avis-card"><div class="avis-stars-sm">★★★★★</div><p class="avis-text">Super accueil, devis clair. Ils ont monté mes 4 pneus hiver + équilibrage en 45 min. Je reviens depuis 3 ans.</p><div class="avis-footer"><div class="avis-author">Thomas K.</div><div class="avis-date">Nov 2024 · Google</div></div></div>
+      <div class="avis-card"><div class="avis-stars-sm">★★★★☆</div><p class="avis-text">Très bonne prestation, pneu runflat monté sans dégâts sur la jante. Seul bémol : un peu d'attente.</p><div class="avis-footer"><div class="avis-author">Sébastien M.</div><div class="avis-date">Oct 2024 · Google</div></div></div>
+      <div class="avis-card"><div class="avis-stars-sm">★★★★★</div><p class="avis-text">Géométrie refaite, la voiture tient parfaitement la route. Explications claires, pas de surprise sur la facture.</p><div class="avis-footer"><div class="avis-author">Fatima B.</div><div class="avis-date">Sep 2024 · Google</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- A PROPOS -->
+<section id="apropos">
+  <div class="section-wrap">
+    <div class="section-eyebrow reveal">Notre histoire</div>
+    <h2 class="section-title reveal">À Propos</h2>
+    <div class="apropos-grid reveal">
+      <div class="apropos-visual">
+        <div class="apropos-visual-content">
+          <span class="apropos-visual-icon">🏭</span>
+          <div class="apropos-visual-label">Atelier certifié · Nantes</div>
+        </div>
+        <div class="apropos-since">Depuis 2012</div>
+      </div>
+      <div class="apropos-text">
+        <div class="apropos-tag">Atelier familial nantais</div>
+        <p>PneuPro est un atelier familial spécialisé dans les pneumatiques, fondé en 2012 au cœur de Nantes. Notre objectif : un service rapide, honnête et professionnel, sans jargon ni surfacturation.</p>
+        <p>Nous traitons aussi bien les véhicules particuliers que les utilitaires légers. Notre équipe maîtrise toutes les marques de pneus et tous types de jantes, y compris les profils bas et les runflat.</p>
+        <p>Matériel à la pointe : machine de montage sans mors, équilibreuse 3D, banc de géométrie numérique.</p>
+        <div class="team-grid">
+          <div class="team-member"><div class="team-avatar">👨‍🔧</div><strong>Samir Bouzera</strong><span>Gérant & Expert pneus</span></div>
+          <div class="team-member"><div class="team-avatar">🔧</div><strong>—</strong><span>Technicien senior</span></div>
+          <div class="team-member"><div class="team-avatar">⚙️</div><strong>—</strong><span>Monteur / Équilibreur</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP — vraie carte Google Maps -->
+<div id="localisation">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2710.6!2d-1.5831!3d47.2101!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s174+Boulevard+Jules+Verne%2C+44000+Nantes!5e0!3m2!1sfr!2sfr!4v1"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    title="PneuPro — 174 Boulevard Jules Verne, Nantes">
+  </iframe>
+  <div class="map-overlay">
+    <strong>📍 PneuPro Nantes</strong>
+    <span>174 Bd Jules Verne, 44000 Nantes</span>
+    <a href="https://maps.google.com/?q=174+Boulevard+Jules+Verne+44000+Nantes" target="_blank" rel="noopener noreferrer">Voir sur Google Maps →</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#accueil" class="footer-logo">Pneu<span>Pro</span></a>
+      <p>Atelier de réparation et montage de pneus à Nantes depuis 2012. Rapidité, honnêteté, savoir-faire.</p>
+      <p style="margin-top:1rem;font-size:0.82rem">📞 <a href="tel:+33240507024" style="color:var(--gold);text-decoration:none;font-family:var(--font-head);font-weight:700;letter-spacing:0.08em">02 40 50 70 24</a></p>
+      <p style="margin-top:0.4rem;font-size:0.82rem">✉️ <a href="/cdn-cgi/l/email-protection#a9cac6c7ddc8cadde9d9c7ccdcd9dbc684c7c8c7ddccda87cfdb" style="color:var(--gold);text-decoration:none;font-family:var(--font-head);font-weight:700;letter-spacing:0.05em"><span class="__cf_email__" data-cfemail="f4979b9a80959780b4849a918184869bd99a959a809187da9286">[email&#160;protected]</span></a></p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <a href="#services">Nos services</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#conseils">Conseils pneus</a>
+      <a href="#faq">FAQ</a>
+      <a href="#apropos">À propos</a>
+      <a href="#contact">Contact & RDV</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>174 Bd Jules Verne<br>44000 Nantes</p>
+      <p style="margin-top:0.7rem">Lun–Ven : 8h–19h<br>Sam : 8h30–17h30</p>
+      <a href="/cdn-cgi/l/email-protection#71121e1f0510120531011f140401031e5c1f101f0514025f1703" style="margin-top:0.7rem"><span class="__cf_email__" data-cfemail="99faf6f7edf8faedd9e9f7fcece9ebf6b4f7f8f7edfceab7ffeb">[email&#160;protected]</span></a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 PneuPro Nantes. Tous droits réservés.</span>
+    <span>Mentions légales · Politique de confidentialité</span>
+  </div>
+</footer>
+
+<!-- BOUTON FLOTTANT : Téléphone -->
+<div class="float-btns">
+  <a href="tel:+33240507024" class="phone-bubble" title="Appeler">📞</a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+// SLIDESHOW TARIFS (inversé : N°6 puis N°1)
+const tarifsSlides = document.querySelectorAll('#tarifs .tarifs-bg-slide');
+const tarifsDots = document.querySelectorAll('#tarifs .tarifs-dot');
+let currentTarifsSlide = 0;
+let tarifsInterval;
+
+function goToTarifsSlide(n) {
+  tarifsSlides[currentTarifsSlide].classList.remove('active');
+  tarifsDots[currentTarifsSlide].classList.remove('active');
+  currentTarifsSlide = n;
+  tarifsSlides[currentTarifsSlide].classList.add('active');
+  tarifsDots[currentTarifsSlide].classList.add('active');
+  clearInterval(tarifsInterval);
+  tarifsInterval = setInterval(nextTarifsSlide, 5000);
+}
+function nextTarifsSlide() {
+  goToTarifsSlide((currentTarifsSlide + 1) % tarifsSlides.length);
+}
+tarifsInterval = setInterval(nextTarifsSlide, 5000);
+
+// SLIDESHOW
+const slides = document.querySelectorAll('.hero-bg-slide');
+const dots = document.querySelectorAll('.slide-dot');
+let currentSlide = 0;
+let slideInterval;
+
+function goToSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  dots[currentSlide].classList.remove('active');
+  currentSlide = n;
+  slides[currentSlide].classList.add('active');
+  dots[currentSlide].classList.add('active');
+  clearInterval(slideInterval);
+  slideInterval = setInterval(nextSlide, 5000);
+}
+function nextSlide() {
+  goToSlide((currentSlide + 1) % slides.length);
+}
+slideInterval = setInterval(nextSlide, 5000);
+
+emailjs.init('Y2U7ChVfgAx_7aAAp');
+
+// CUSTOM CURSOR
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+let mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursor.style.left = mx + 'px'; cursor.style.top = my + 'px'; });
+function animRing() { rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12; ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; requestAnimationFrame(animRing); }
+animRing();
+document.querySelectorAll('a, button').forEach(el => {
+  el.addEventListener('mouseenter', () => { cursor.style.width = '20px'; cursor.style.height = '20px'; ring.style.width = '60px'; ring.style.height = '60px'; ring.style.borderColor = 'rgba(77,166,255,0.8)'; });
+  el.addEventListener('mouseleave', () => { cursor.style.width = '10px'; cursor.style.height = '10px'; ring.style.width = '36px'; ring.style.height = '36px'; ring.style.borderColor = 'rgba(77,166,255,0.5)'; });
+});
+
+// === CALENDRIER 1 (desktop) ===
+let currentDate = new Date();
+let selectedDate = null;
+
+function renderCalendar() {
+  const year = currentDate.getFullYear();
+  const month = currentDate.getMonth();
+  const today = new Date(); today.setHours(0,0,0,0);
+  const months = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
+  document.getElementById('calMonthYear').textContent = months[month] + ' ' + year;
+  const grid = document.getElementById('calGrid');
+  grid.innerHTML = '';
+  let firstDay = new Date(year, month, 1).getDay();
+  firstDay = firstDay === 0 ? 6 : firstDay - 1;
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  for (let i = 0; i < firstDay; i++) {
+    const cell = document.createElement('button');
+    cell.className = 'cal-cell empty'; cell.disabled = true; grid.appendChild(cell);
+  }
+  for (let d = 1; d <= daysInMonth; d++) {
+    const cell = document.createElement('button');
+    const cellDate = new Date(year, month, d); cellDate.setHours(0,0,0,0);
+    const isSunday = cellDate.getDay() === 0;
+    const isPast = cellDate < today;
+    cell.textContent = d; cell.className = 'cal-cell';
+    if (isPast || isSunday) {
+      cell.classList.add('disabled'); cell.disabled = true;
+    } else {
+      if (cellDate.toDateString() === today.toDateString()) cell.classList.add('today');
+      if (selectedDate && cellDate.toDateString() === selectedDate.toDateString()) cell.classList.add('selected');
+      cell.onclick = () => selectDate(cellDate, cell);
+    }
+    grid.appendChild(cell);
+  }
+}
+
+function selectDate(date, cell) {
+  selectedDate = date;
+  const d = date.getDate().toString().padStart(2,'0');
+  const m = (date.getMonth()+1).toString().padStart(2,'0');
+  document.getElementById('date').value = d+'/'+m+'/'+date.getFullYear();
+  document.querySelectorAll('#calGrid .cal-cell').forEach(c => c.classList.remove('selected'));
+  cell.classList.add('selected');
+  const isSat = date.getDay() === 6;
+  document.querySelectorAll('#contact .time-slot').forEach(slot => {
+    const h = parseInt(slot.textContent.split(':')[0]);
+    if (isSat && h >= 17) { slot.classList.add('unavailable'); slot.disabled = true; }
+    else { slot.classList.remove('unavailable'); slot.disabled = false; }
+  });
+}
+
+function changeMonth(dir) {
+  currentDate.setMonth(currentDate.getMonth() + dir);
+  const today = new Date();
+  if (currentDate.getFullYear() < today.getFullYear() ||
+    (currentDate.getFullYear() === today.getFullYear() && currentDate.getMonth() < today.getMonth())) {
+    currentDate = new Date(today.getFullYear(), today.getMonth(), 1);
+  }
+  renderCalendar();
+}
+
+function selectTime(btn, time) {
+  document.getElementById('heure').value = time;
+  document.querySelectorAll('#contact .time-slot').forEach(s => s.classList.remove('selected'));
+  btn.classList.add('selected');
+}
+
+renderCalendar();
+
+// === CALENDRIER 2 (mobile) ===
+let currentDate2 = new Date();
+let selectedDate2 = null;
+
+function renderCalendar2() {
+  const year = currentDate2.getFullYear();
+  const month = currentDate2.getMonth();
+  const today = new Date(); today.setHours(0,0,0,0);
+  const months = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
+  document.getElementById('calMonthYear2').textContent = months[month] + ' ' + year;
+  const grid = document.getElementById('calGrid2');
+  grid.innerHTML = '';
+  let firstDay = new Date(year, month, 1).getDay();
+  firstDay = firstDay === 0 ? 6 : firstDay - 1;
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  for (let i = 0; i < firstDay; i++) {
+    const cell = document.createElement('button');
+    cell.className = 'cal-cell empty'; cell.disabled = true; grid.appendChild(cell);
+  }
+  for (let d = 1; d <= daysInMonth; d++) {
+    const cell = document.createElement('button');
+    const cellDate = new Date(year, month, d); cellDate.setHours(0,0,0,0);
+    const isSunday = cellDate.getDay() === 0;
+    const isPast = cellDate < today;
+    cell.textContent = d; cell.className = 'cal-cell';
+    if (isPast || isSunday) {
+      cell.classList.add('disabled'); cell.disabled = true;
+    } else {
+      if (cellDate.toDateString() === today.toDateString()) cell.classList.add('today');
+      if (selectedDate2 && cellDate.toDateString() === selectedDate2.toDateString()) cell.classList.add('selected');
+      cell.onclick = () => selectDate2(cellDate, cell);
+    }
+    grid.appendChild(cell);
+  }
+}
+
+function selectDate2(date, cell) {
+  selectedDate2 = date;
+  const d = date.getDate().toString().padStart(2,'0');
+  const m = (date.getMonth()+1).toString().padStart(2,'0');
+  document.getElementById('date2').value = d+'/'+m+'/'+date.getFullYear();
+  document.querySelectorAll('#calGrid2 .cal-cell').forEach(c => c.classList.remove('selected'));
+  cell.classList.add('selected');
+  const isSat = date.getDay() === 6;
+  document.querySelectorAll('#timeSlots2 .time-slot').forEach(slot => {
+    const h = parseInt(slot.textContent.split(':')[0]);
+    if (isSat && h >= 17) { slot.classList.add('unavailable'); slot.disabled = true; }
+    else { slot.classList.remove('unavailable'); slot.disabled = false; }
+  });
+}
+
+function changeMonth2(dir) {
+  currentDate2.setMonth(currentDate2.getMonth() + dir);
+  const today = new Date();
+  if (currentDate2.getFullYear() < today.getFullYear() ||
+    (currentDate2.getFullYear() === today.getFullYear() && currentDate2.getMonth() < today.getMonth())) {
+    currentDate2 = new Date(today.getFullYear(), today.getMonth(), 1);
+  }
+  renderCalendar2();
+}
+
+function selectTime2(btn, time) {
+  document.getElementById('heure2').value = time;
+  document.querySelectorAll('#timeSlots2 .time-slot').forEach(s => s.classList.remove('selected'));
+  btn.classList.add('selected');
+}
+
+renderCalendar2();
+
+// === FORMULAIRE COMMUN ===
+function sendRDV(prenom, nom, phone, email, date, heure, service, successId, btnEl) {
+  if (!prenom || !phone || !date || !heure || !service) {
+    alert('Merci de remplir tous les champs obligatoires : prénom, téléphone, jour, heure et prestation.');
+    return;
+  }
+  btnEl.textContent = 'Envoi en cours...'; btnEl.disabled = true;
+  emailjs.send('service_hsdt5uk', 'template_yllon3k', {
+    prenom, nom, telephone: phone, email, date, heure, service,
+    name: prenom + ' ' + nom, title: service, message: '—'
+  }).then(() => {
+    document.getElementById(successId).style.display = 'block';
+    btnEl.textContent = 'Confirmer le rendez-vous →'; btnEl.disabled = false;
+  }).catch(err => {
+    alert("Erreur lors de l'envoi. Veuillez réessayer ou nous appeler directement.");
+    console.error(err); btnEl.textContent = 'Confirmer le rendez-vous →'; btnEl.disabled = false;
+  });
+}
+
+function submitForm() {
+  const btn = document.querySelector('#contact .btn-rdv-submit');
+  sendRDV(
+    document.getElementById('fname').value.trim(),
+    document.getElementById('lname').value.trim(),
+    document.getElementById('phone').value.trim(),
+    document.getElementById('email').value.trim(),
+    document.getElementById('date').value,
+    document.getElementById('heure').value,
+    document.getElementById('service').value,
+    'formSuccess', btn
+  );
+}
+
+function submitForm2() {
+  const btn = document.querySelector('#contact-m .btn-rdv-submit');
+  sendRDV(
+    document.getElementById('fname2').value.trim(),
+    document.getElementById('lname2').value.trim(),
+    document.getElementById('phone2').value.trim(),
+    document.getElementById('email2').value.trim(),
+    document.getElementById('date2').value,
+    document.getElementById('heure2').value,
+    document.getElementById('service2').value,
+    'formSuccess2', btn
+  );
+}
+
+// === NAV ===
+function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+document.querySelectorAll('.nav-bottom a, .mobile-menu a, .nav-cta-btn').forEach(l => {
+  l.addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
+});
+
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+// === REVEAL ===
+// Force tout visible immédiatement en fallback de sécurité
+document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+// Animation scroll pour les navigateurs compatibles
+if ('IntersectionObserver' in window) {
+  document.querySelectorAll('.reveal').forEach(el => el.classList.remove('visible'));
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.05 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+}
+
+// === NAV HIGHLIGHT ===
+const navLinks = document.querySelectorAll('.nav-bottom a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  document.querySelectorAll('section[id], div[id]').forEach(section => {
+    const top = section.getBoundingClientRect().top;
+    if (top <= 120) current = section.id;
+  });
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
