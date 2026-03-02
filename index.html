@@ -267,6 +267,37 @@ nav {
 .btn-rdv-submit:disabled { opacity: 0.5; cursor: not-allowed; }
 .form-success-msg { display: none; margin-top: 0.8rem; background: rgba(74,222,128,0.08); border: 1px solid rgba(74,222,128,0.3); padding: 0.9rem; color: #4ade80; font-size: 0.78rem; font-weight: 600; text-align: center; font-family: var(--font-head); letter-spacing: 0.08em; text-transform: uppercase; }
 
+/* MINI FINDER dans RDV */
+.mini-finder { border: 1px solid var(--border-dim); margin-bottom: 1rem; overflow: hidden; }
+.mini-finder-header {
+  background: var(--black2); padding: 0.7rem 1rem; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: var(--font-head); font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold);
+  transition: background 0.2s;
+}
+.mini-finder-header:hover { background: var(--gold-dim); }
+.mini-finder-arrow { transition: transform 0.3s; font-size: 0.6rem; }
+.mini-finder-arrow.open { transform: rotate(180deg); }
+.mini-finder-body { display: none; padding: 0.8rem 1rem 1rem; border-top: 1px solid var(--border-dim); }
+.mini-finder-body.open { display: block; }
+.mini-tabs { display: flex; gap: 0.4rem; margin-bottom: 0.4rem; }
+.mini-tab {
+  flex: 1; padding: 0.45rem 0.2rem; background: none; border: 1px solid var(--border-dim);
+  color: var(--text-dim); font-family: var(--font-head); font-size: 0.6rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: all 0.2s;
+}
+.mini-tab.active { background: var(--gold); color: var(--black); border-color: var(--gold); }
+.mini-tab:hover:not(.active) { color: var(--gold); border-color: var(--gold); }
+.mini-panel { display: none; }
+.mini-panel.active { display: block; }
+.mini-search-btn {
+  background: var(--gold); color: var(--black); border: none; padding: 0.6rem 0.9rem;
+  font-family: var(--font-head); font-weight: 800; font-size: 0.72rem; letter-spacing: 0.1em;
+  text-transform: uppercase; cursor: pointer; transition: background 0.2s; white-space: nowrap;
+}
+.mini-search-btn:hover { background: var(--gold2); }
+
 /* MOBILE CONTACT SECTION — affiché uniquement sur tablette/mobile */
 #contact-mobile {
   display: none;
@@ -293,8 +324,78 @@ section { padding: 6rem 5vw; }
 }
 .section-sub { color: var(--text-mid); font-size: 0.88rem; line-height: 1.8; max-width: 480px; font-weight: 300; }
 
-/* SERVICES */
-#services { background: var(--black2); border-top: 1px solid var(--border-dim); border-bottom: 1px solid var(--border-dim); }
+/* TIRE FINDER */
+#tire-finder { background: var(--black2); border-top: 1px solid var(--border-dim); border-bottom: 1px solid var(--border-dim); }
+.finder-tabs { display: flex; border: 1px solid var(--border-dim); margin-bottom: 2rem; }
+.finder-tab {
+  flex: 1; padding: 1rem; background: none; border: none; color: var(--text-dim);
+  font-family: var(--font-head); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; cursor: pointer; transition: all 0.2s;
+  border-right: 1px solid var(--border-dim); display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+}
+.finder-tab:last-child { border-right: none; }
+.finder-tab:hover { color: var(--offwhite); background: var(--gold-dim); }
+.finder-tab.active { background: var(--gold); color: var(--black); }
+.finder-panel { display: none; }
+.finder-panel.active { display: block; }
+.finder-input-group { display: flex; gap: 0.7rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.finder-input {
+  flex: 1; min-width: 180px; border: 1px solid var(--border-dim); background: var(--black);
+  padding: 0.85rem 1.1rem; font-family: var(--font-body); font-size: 0.85rem; color: var(--offwhite);
+  outline: none; transition: border-color 0.2s;
+}
+.finder-input:focus { border-color: var(--gold); }
+.finder-input::placeholder { color: var(--text-dim); }
+.finder-select {
+  flex: 1; min-width: 160px; border: 1px solid var(--border-dim); background: var(--black);
+  padding: 0.85rem 1.1rem; font-family: var(--font-body); font-size: 0.85rem; color: var(--offwhite);
+  outline: none; -webkit-appearance: none; transition: border-color 0.2s; cursor: pointer;
+}
+.finder-select:focus { border-color: var(--gold); }
+.finder-select option { background: var(--black); }
+.finder-btn {
+  background: var(--gold); color: var(--black); border: none; padding: 0.85rem 2rem;
+  font-family: var(--font-head); font-weight: 800; font-size: 0.78rem; letter-spacing: 0.15em;
+  text-transform: uppercase; cursor: pointer; transition: background 0.2s; white-space: nowrap;
+}
+.finder-btn:hover { background: var(--gold2); }
+.finder-result {
+  display: none; margin-top: 1.5rem; border: 1px solid var(--border);
+  background: var(--carbon); padding: 1.5rem; position: relative;
+}
+.finder-result::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+.finder-result.show { display: block; }
+.result-size { font-family: var(--font-head); font-size: 2.5rem; font-weight: 900; color: var(--gold); letter-spacing: 0.05em; margin-bottom: 0.4rem; }
+.result-label { font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.12em; font-family: var(--font-head); margin-bottom: 1rem; }
+.result-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.8rem; margin-bottom: 1.2rem; }
+.result-info-item { border-left: 2px solid var(--gold); padding-left: 0.8rem; }
+.result-info-item strong { display: block; font-family: var(--font-head); font-size: 0.78rem; color: var(--offwhite); text-transform: uppercase; letter-spacing: 0.05em; }
+.result-info-item span { font-size: 0.72rem; color: var(--text-dim); }
+.result-cta { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+.photo-drop {
+  border: 2px dashed var(--border); background: var(--black); padding: 3rem;
+  text-align: center; cursor: pointer; transition: border-color 0.2s, background 0.2s;
+  position: relative; overflow: hidden;
+}
+.photo-drop:hover, .photo-drop.dragover { border-color: var(--gold); background: var(--gold-dim); }
+.photo-drop input[type=file] { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+.photo-drop-icon { font-size: 2.5rem; display: block; margin-bottom: 0.8rem; }
+.photo-drop p { color: var(--text-mid); font-size: 0.82rem; font-weight: 300; }
+.photo-drop strong { color: var(--gold); font-family: var(--font-head); font-size: 0.82rem; letter-spacing: 0.08em; }
+.photo-preview { max-width: 200px; margin: 1rem auto 0; display: none; border: 1px solid var(--border); }
+.photo-preview img { width: 100%; display: block; }
+.ai-loading { display: none; text-align: center; padding: 1.5rem; color: var(--text-mid); font-size: 0.82rem; }
+.ai-loading .spinner { display: inline-block; width: 20px; height: 20px; border: 2px solid var(--border); border-top-color: var(--gold); border-radius: 50%; animation: spin 0.8s linear infinite; margin-bottom: 0.5rem; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.plaque-input { font-family: var(--font-head); font-size: 1.6rem; font-weight: 900; letter-spacing: 0.2em; text-align: center; text-transform: uppercase; }
+.plaque-note { font-size: 0.72rem; color: var(--text-dim); text-align: center; margin-top: 0.5rem; font-weight: 300; }
+
+/* RESPONSIVE FINDER */
+@media(max-width: 600px) {
+  .finder-tabs { flex-direction: column; }
+  .finder-tab { border-right: none; border-bottom: 1px solid var(--border-dim); }
+  .finder-tab:last-child { border-bottom: none; }
+}
 .services-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem; }
 .services-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--border-dim); border: 1px solid var(--border-dim); }
 .service-card {
@@ -601,6 +702,67 @@ footer { background: var(--carbon2); color: var(--text-dim); padding: 4rem 5vw 2
     <div class="rdv-card" id="contact">
       <div class="rdv-card-title">Prendre rendez-vous</div>
       <div class="rdv-card-sub">Choisissez votre jour et votre créneau horaire</div>
+
+      <!-- MINI TIRE FINDER dans le formulaire -->
+      <div class="mini-finder">
+        <div class="mini-finder-header" onclick="toggleMiniFinder()">
+          <span>🔍 Trouver ma taille de pneu</span>
+          <span class="mini-finder-arrow" id="miniFArrow">▼</span>
+        </div>
+        <div class="mini-finder-body" id="miniFBody">
+          <div class="mini-tabs">
+            <button class="mini-tab active" onclick="switchMiniTab('plaque')">🔢 Plaque</button>
+            <button class="mini-tab" onclick="switchMiniTab('voiture')">🚗 Véhicule</button>
+            <button class="mini-tab" onclick="switchMiniTab('photo')">📸 Photo</button>
+          </div>
+          <!-- Plaque -->
+          <div class="mini-panel active" id="mini-panel-plaque">
+            <div style="display:flex;gap:0.5rem;margin-top:0.6rem">
+              <input class="rdv-group input plaque-input" id="rdvPlaqueInput" placeholder="AB-123-CD" maxlength="9" oninput="formatPlaque(this)" style="flex:1;border:1px solid var(--border-dim);background:var(--black2);padding:0.6rem 0.8rem;font-family:var(--font-head);font-size:1rem;font-weight:700;letter-spacing:0.15em;color:var(--offwhite);text-transform:uppercase;outline:none">
+              <button class="mini-search-btn" onclick="rdvSearchPlaque()">→</button>
+            </div>
+          </div>
+          <!-- Voiture -->
+          <div class="mini-panel" id="mini-panel-voiture">
+            <div style="display:flex;flex-direction:column;gap:0.4rem;margin-top:0.6rem">
+              <select class="rdv-group select" id="rdvMarque" onchange="rdvUpdateModeles()" style="border:1px solid var(--border-dim);background:var(--black2);padding:0.55rem 0.8rem;color:var(--offwhite);font-family:var(--font-body);font-size:0.8rem;outline:none">
+                <option value="">— Marque</option>
+                <option>Renault</option><option>Peugeot</option><option>Citroën</option>
+                <option>Volkswagen</option><option>BMW</option><option>Mercedes</option>
+                <option>Audi</option><option>Toyota</option><option>Ford</option>
+                <option>Opel</option><option>Fiat</option><option>Dacia</option>
+              </select>
+              <select class="rdv-group select" id="rdvModele" onchange="rdvUpdateAnnees()" style="border:1px solid var(--border-dim);background:var(--black2);padding:0.55rem 0.8rem;color:var(--offwhite);font-family:var(--font-body);font-size:0.8rem;outline:none">
+                <option value="">— Modèle</option>
+              </select>
+              <select class="rdv-group select" id="rdvAnnee" style="border:1px solid var(--border-dim);background:var(--black2);padding:0.55rem 0.8rem;color:var(--offwhite);font-family:var(--font-body);font-size:0.8rem;outline:none">
+                <option value="">— Année</option>
+              </select>
+              <button class="mini-search-btn" style="width:100%" onclick="rdvSearchVoiture()">→ Trouver ma taille</button>
+            </div>
+          </div>
+          <!-- Photo -->
+          <div class="mini-panel" id="mini-panel-photo">
+            <div style="margin-top:0.6rem;border:1px dashed var(--border);padding:1rem;text-align:center;cursor:pointer;position:relative;background:var(--black)">
+              <input type="file" id="rdvPhotoInput" accept="image/*" onchange="rdvHandlePhoto(event)" style="position:absolute;inset:0;opacity:0;cursor:pointer">
+              <span style="font-size:1.3rem">📷</span>
+              <p style="font-size:0.72rem;color:var(--text-dim);margin-top:0.4rem">Photo du flanc de votre pneu</p>
+            </div>
+          </div>
+          <!-- Résultat mini -->
+          <div class="mini-loading" id="miniFLoading" style="display:none;text-align:center;padding:0.8rem;font-size:0.75rem;color:var(--text-mid)">
+            <div style="display:inline-block;width:14px;height:14px;border:2px solid var(--border);border-top-color:var(--gold);border-radius:50%;animation:spin 0.8s linear infinite;margin-right:0.5rem"></div>Analyse…
+          </div>
+          <div class="mini-result" id="miniFResult" style="display:none;margin-top:0.8rem;padding:0.8rem;background:var(--black);border:1px solid var(--gold);border-left:3px solid var(--gold)">
+            <div style="font-family:var(--font-head);font-size:0.6rem;color:var(--text-dim);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.2rem">Taille trouvée</div>
+            <div id="miniFTaille" style="font-family:var(--font-head);font-size:1.4rem;font-weight:900;color:var(--gold)"></div>
+            <div id="miniFLabel" style="font-size:0.65rem;color:var(--text-dim);margin-top:0.1rem"></div>
+            <button onclick="applyTailleToForm()" style="margin-top:0.6rem;background:var(--gold);color:var(--black);border:none;padding:0.4rem 1rem;font-family:var(--font-head);font-weight:800;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;width:100%">✓ Utiliser cette taille dans le formulaire</button>
+          </div>
+        </div>
+      </div>
+      <!-- FIN MINI FINDER -->
+
       <div class="rdv-row">
         <div class="rdv-group"><label>Prénom *</label><input type="text" id="fname" placeholder="Jean" autocomplete="given-name"></div>
         <div class="rdv-group"><label>Nom</label><input type="text" id="lname" placeholder="Dupont" autocomplete="family-name"></div>
@@ -621,6 +783,11 @@ footer { background: var(--carbon2); color: var(--text-dim); padding: 4rem 5vw 2
           <option>Forfait hivernage</option>
           <option>Autre / Devis</option>
         </select>
+      </div>
+      <!-- Champ taille de pneu (auto-rempli par le finder) -->
+      <div class="rdv-group" id="taille-group" style="display:none">
+        <label>Taille de pneu détectée</label>
+        <input type="text" id="taillePneu" readonly style="background:rgba(77,166,255,0.06);border-color:var(--gold);color:var(--gold);font-family:var(--font-head);font-weight:700;font-size:1rem;letter-spacing:0.1em;cursor:default">
       </div>
       <span class="cal-label">Choisir un jour *</span>
       <div class="calendar">
@@ -734,6 +901,73 @@ footer { background: var(--carbon2); color: var(--text-dim); padding: 4rem 5vw 2
     </div>
   </div>
 </div>
+
+<!-- TIRE FINDER -->
+<section id="tire-finder">
+  <div class="section-wrap">
+    <div class="section-eyebrow reveal">Outil gratuit</div>
+    <h2 class="section-title reveal">Trouver la taille de mon pneu</h2>
+    <p class="section-sub reveal" style="margin-bottom:2.5rem">3 façons de trouver la taille exacte — plaque, véhicule ou photo de votre pneu.</p>
+
+    <!-- TABS -->
+    <div class="finder-tabs reveal">
+      <button class="finder-tab active" onclick="switchTab('plaque')">🔢 Plaque</button>
+      <button class="finder-tab" onclick="switchTab('voiture')">🚗 Véhicule</button>
+      <button class="finder-tab" onclick="switchTab('photo')">📸 Photo du pneu</button>
+    </div>
+
+    <!-- PANEL PLAQUE -->
+    <div class="finder-panel active" id="panel-plaque">
+      <p style="color:var(--text-mid);font-size:0.82rem;margin-bottom:1.2rem;font-weight:300">Entrez votre plaque française — nous cherchons les dimensions d'origine de votre véhicule.</p>
+      <div class="finder-input-group">
+        <input class="finder-input plaque-input" id="plaqueInput" placeholder="AB-123-CD" maxlength="9" oninput="formatPlaque(this)">
+        <button class="finder-btn" onclick="searchPlaque()">→ Rechercher</button>
+      </div>
+      <p class="plaque-note">Format SIV (ex : AB-123-CD) ou ancien format (ex : 1234 AB 75)</p>
+      <div class="ai-loading" id="plaqueLoading"><div class="spinner"></div><br>Analyse en cours…</div>
+      <div class="finder-result" id="plaqueResult"></div>
+    </div>
+
+    <!-- PANEL VOITURE -->
+    <div class="finder-panel" id="panel-voiture">
+      <p style="color:var(--text-mid);font-size:0.82rem;margin-bottom:1.2rem;font-weight:300">Sélectionnez votre véhicule pour obtenir les tailles d'origine et homologuées.</p>
+      <div class="finder-input-group">
+        <select class="finder-select" id="marque" onchange="updateModeles()">
+          <option value="">— Marque</option>
+          <option>Renault</option><option>Peugeot</option><option>Citroën</option>
+          <option>Volkswagen</option><option>BMW</option><option>Mercedes</option>
+          <option>Audi</option><option>Toyota</option><option>Ford</option>
+          <option>Opel</option><option>Fiat</option><option>Dacia</option>
+        </select>
+        <select class="finder-select" id="modele" onchange="updateAnnees()">
+          <option value="">— Modèle</option>
+        </select>
+        <select class="finder-select" id="annee">
+          <option value="">— Année</option>
+        </select>
+        <button class="finder-btn" onclick="searchVoiture()">→ Rechercher</button>
+      </div>
+      <div class="ai-loading" id="voitureLoading"><div class="spinner"></div><br>Recherche en cours…</div>
+      <div class="finder-result" id="voitureResult"></div>
+    </div>
+
+    <!-- PANEL PHOTO -->
+    <div class="finder-panel" id="panel-photo">
+      <p style="color:var(--text-mid);font-size:0.82rem;margin-bottom:1.2rem;font-weight:300">Prenez en photo le flanc de votre pneu — notre IA lit les inscriptions et identifie la taille.</p>
+      <div class="photo-drop" id="photoDrop">
+        <input type="file" id="photoInput" accept="image/*" onchange="handlePhoto(event)">
+        <span class="photo-drop-icon">📷</span>
+        <p><strong>Glissez une photo ici</strong></p>
+        <p style="margin-top:0.4rem">ou cliquez pour choisir un fichier — JPG, PNG, HEIC</p>
+        <p style="margin-top:0.8rem;font-size:0.7rem;color:var(--text-dim)">Astuce : photographiez le flanc du pneu où on lit : 205/55 R16</p>
+      </div>
+      <div class="photo-preview" id="photoPreview"><img id="photoImg" src="" alt="Aperçu"></div>
+      <div class="ai-loading" id="photoLoading"><div class="spinner"></div><br>L'IA analyse votre pneu…</div>
+      <div class="finder-result" id="photoResult"></div>
+    </div>
+
+  </div>
+</section>
 
 <!-- SERVICES -->
 <section id="services">
@@ -962,6 +1196,307 @@ footer { background: var(--carbon2); color: var(--text-dim); padding: 4rem 5vw 2
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
+// === TIRE FINDER ===
+const catalogueVehicules = {
+  'Renault': { 'Clio': ['2019-2024','2013-2018','2005-2012'], 'Megane': ['2016-2024','2008-2015','2002-2007'], 'Captur': ['2019-2024','2013-2018'], 'Zoe': ['2019-2024','2013-2018'], 'Twingo': ['2014-2024'], 'Kadjar': ['2015-2024'] },
+  'Peugeot': { '208': ['2019-2024','2012-2018'], '308': ['2021-2024','2013-2020','2007-2012'], '3008': ['2016-2024','2009-2015'], '2008': ['2019-2024','2013-2018'], '508': ['2018-2024'] },
+  'Citroën': { 'C3': ['2017-2024','2010-2016'], 'C4': ['2020-2024','2010-2018'], 'C5 Aircross': ['2018-2024'], 'Berlingo': ['2018-2024','2008-2017'] },
+  'Volkswagen': { 'Golf': ['2020-2024','2012-2019','2004-2011'], 'Polo': ['2017-2024','2009-2016'], 'Tiguan': ['2016-2024','2007-2015'], 'Passat': ['2015-2024'], 'T-Roc': ['2017-2024'] },
+  'BMW': { 'Série 1': ['2019-2024','2011-2018'], 'Série 3': ['2019-2024','2012-2018'], 'Série 5': ['2017-2024','2010-2016'], 'X1': ['2022-2024','2015-2021'], 'X3': ['2017-2024'] },
+  'Mercedes': { 'Classe A': ['2018-2024','2012-2017'], 'Classe C': ['2021-2024','2014-2020'], 'Classe E': ['2016-2024'], 'GLC': ['2015-2024'], 'CLA': ['2019-2024'] },
+  'Audi': { 'A3': ['2020-2024','2012-2019'], 'A4': ['2016-2024','2007-2015'], 'Q3': ['2018-2024'], 'Q5': ['2017-2024'], 'A1': ['2018-2024'] },
+  'Toyota': { 'Yaris': ['2020-2024','2011-2019'], 'Corolla': ['2019-2024'], 'C-HR': ['2016-2024'], 'RAV4': ['2018-2024'], 'Aygo': ['2014-2024'] },
+  'Ford': { 'Fiesta': ['2017-2024','2008-2016'], 'Focus': ['2018-2024','2011-2017'], 'Puma': ['2019-2024'], 'Kuga': ['2020-2024','2012-2019'] },
+  'Opel': { 'Corsa': ['2019-2024','2014-2018'], 'Astra': ['2021-2024','2015-2020'], 'Mokka': ['2020-2024','2012-2019'] },
+  'Fiat': { '500': ['2015-2024','2007-2014'], 'Panda': ['2012-2024'], 'Tipo': ['2015-2024'] },
+  'Dacia': { 'Sandero': ['2020-2024','2012-2019'], 'Duster': ['2017-2024','2010-2016'], 'Logan': ['2020-2024'], 'Jogger': ['2021-2024'] }
+};
+const taillesPneus = {
+  'Renault_Clio_2019-2024': { taille: '205/45 R17', alt: '195/65 R15', pression: '2.3 / 2.1 bar' },
+  'Renault_Clio_2013-2018': { taille: '195/65 R15', alt: '185/65 R15', pression: '2.2 / 2.0 bar' },
+  'Renault_Clio_2005-2012': { taille: '185/65 R15', alt: '175/65 R14', pression: '2.2 / 2.0 bar' },
+  'Renault_Megane_2016-2024': { taille: '205/55 R16', alt: '225/45 R17', pression: '2.3 / 2.1 bar' },
+  'Renault_Captur_2019-2024': { taille: '215/55 R17', alt: '205/60 R16', pression: '2.3 / 2.1 bar' },
+  'Renault_Zoe_2019-2024': { taille: '205/55 R16', alt: '195/65 R15', pression: '2.5 / 2.3 bar' },
+  'Peugeot_208_2019-2024': { taille: '205/45 R17', alt: '195/55 R16', pression: '2.3 / 2.1 bar' },
+  'Peugeot_308_2021-2024': { taille: '215/50 R17', alt: '205/55 R16', pression: '2.3 / 2.1 bar' },
+  'Peugeot_3008_2016-2024': { taille: '225/55 R17', alt: '215/60 R17', pression: '2.4 / 2.2 bar' },
+  'Citroën_C3_2017-2024': { taille: '195/55 R16', alt: '185/65 R15', pression: '2.2 / 2.0 bar' },
+  'Citroën_C4_2020-2024': { taille: '215/55 R17', alt: '205/55 R17', pression: '2.3 / 2.1 bar' },
+  'Volkswagen_Golf_2020-2024': { taille: '225/40 R18', alt: '205/55 R16', pression: '2.4 / 2.2 bar' },
+  'Volkswagen_Golf_2012-2019': { taille: '205/55 R16', alt: '215/45 R17', pression: '2.3 / 2.1 bar' },
+  'Volkswagen_Polo_2017-2024': { taille: '195/55 R16', alt: '185/65 R15', pression: '2.3 / 2.1 bar' },
+  'Volkswagen_Tiguan_2016-2024': { taille: '235/50 R18', alt: '215/65 R17', pression: '2.5 / 2.3 bar' },
+  'BMW_Série 3_2019-2024': { taille: '225/45 R18', alt: '205/60 R16', pression: '2.4 / 2.2 bar' },
+  'BMW_Série 1_2019-2024': { taille: '205/55 R16', alt: '225/40 R17', pression: '2.3 / 2.1 bar' },
+  'Mercedes_Classe A_2018-2024': { taille: '225/45 R17', alt: '205/60 R16', pression: '2.4 / 2.2 bar' },
+  'Audi_A3_2020-2024': { taille: '215/45 R17', alt: '205/55 R16', pression: '2.4 / 2.2 bar' },
+  'Toyota_Yaris_2020-2024': { taille: '195/50 R16', alt: '185/65 R15', pression: '2.3 / 2.1 bar' },
+  'Ford_Fiesta_2017-2024': { taille: '195/50 R16', alt: '185/65 R15', pression: '2.3 / 2.1 bar' },
+  'Dacia_Sandero_2020-2024': { taille: '195/55 R16', alt: '185/65 R15', pression: '2.2 / 2.0 bar' },
+  'Dacia_Duster_2017-2024': { taille: '215/60 R17', alt: '205/60 R16', pression: '2.4 / 2.2 bar' },
+};
+
+function switchTab(tab) {
+  document.querySelectorAll('.finder-tab').forEach((t,i) => t.classList.toggle('active', ['plaque','voiture','photo'][i] === tab));
+  document.querySelectorAll('.finder-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('panel-' + tab).classList.add('active');
+}
+function formatPlaque(input) {
+  let v = input.value.toUpperCase().replace(/[^A-Z0-9]/g, '');
+  if (v.length > 2 && v.length <= 5) v = v.slice(0,2) + '-' + v.slice(2);
+  else if (v.length > 5) v = v.slice(0,2) + '-' + v.slice(2,5) + '-' + v.slice(5,7);
+  input.value = v;
+}
+function showResult(containerId, data) {
+  const el = document.getElementById(containerId);
+  el.innerHTML = `
+    <div class="result-size">${data.taille}</div>
+    <div class="result-label">${data.label || 'Taille recommandée'}</div>
+    ${data.alt ? `<div style="margin-bottom:1rem;font-size:0.78rem;color:var(--text-dim)">Alternative : <span style="color:var(--gold);font-family:var(--font-head);font-weight:700">${data.alt}</span></div>` : ''}
+    <div class="result-info">
+      ${data.pression ? `<div class="result-info-item"><strong>Pression</strong><span>${data.pression}</span></div>` : ''}
+      ${data.taille.match(/\d+\/\d+/) ? `
+      <div class="result-info-item"><strong>Largeur</strong><span>${data.taille.split('/')[0]} mm</span></div>
+      <div class="result-info-item"><strong>Rapport h/l</strong><span>${data.taille.split('/')[1].split(' ')[0]}%</span></div>
+      <div class="result-info-item"><strong>Diamètre</strong><span>${data.taille.split('R')[1] || '—'}"</span></div>` : ''}
+    </div>
+    <div class="result-cta">
+      <a href="#contact" class="btn-gold" style="font-size:0.72rem;padding:0.7rem 1.5rem">→ Prendre RDV</a>
+      <a href="tel:+33240507024" class="btn-outline-gold" style="font-size:0.72rem;padding:0.7rem 1.5rem">📞 Appeler</a>
+    </div>`;
+  el.classList.add('show');
+}
+async function searchPlaque() {
+  const plaque = document.getElementById('plaqueInput').value.trim();
+  if (!plaque || plaque.length < 7) { alert('Veuillez entrer une plaque valide (ex: AB-123-CD)'); return; }
+  document.getElementById('plaqueLoading').style.display = 'block';
+  document.getElementById('plaqueResult').classList.remove('show');
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 400,
+        messages: [{ role: 'user', content: `Pour un véhicule avec la plaque française "${plaque}", donne les dimensions de pneus d'origine les plus probables. Réponds UNIQUEMENT en JSON sans markdown: {"taille":"205/55 R16","alt":"195/65 R15","pression":"2.3 / 2.1 bar","label":"Taille estimée - plaque ${plaque}"}` }] })
+    });
+    const d = await res.json();
+    let txt = d.content.map(c=>c.text||'').join('').replace(/\`\`\`json|\`\`\`/g,'').trim();
+    showResult('plaqueResult', JSON.parse(txt));
+  } catch(e) {
+    showResult('plaqueResult', { taille: '205/55 R16', alt: '195/65 R15', pression: '2.3 / 2.1 bar', label: 'Taille courante — appelez-nous pour confirmation' });
+  }
+  document.getElementById('plaqueLoading').style.display = 'none';
+}
+function updateModeles() {
+  const marque = document.getElementById('marque').value;
+  const modeleEl = document.getElementById('modele');
+  const anneeEl = document.getElementById('annee');
+  modeleEl.innerHTML = '<option value="">— Modèle</option>';
+  anneeEl.innerHTML = '<option value="">— Année</option>';
+  if (marque && catalogueVehicules[marque]) Object.keys(catalogueVehicules[marque]).forEach(m => modeleEl.innerHTML += `<option>${m}</option>`);
+}
+function updateAnnees() {
+  const marque = document.getElementById('marque').value;
+  const modele = document.getElementById('modele').value;
+  const anneeEl = document.getElementById('annee');
+  anneeEl.innerHTML = '<option value="">— Année</option>';
+  if (marque && modele && catalogueVehicules[marque]?.[modele]) catalogueVehicules[marque][modele].forEach(a => anneeEl.innerHTML += `<option>${a}</option>`);
+}
+async function searchVoiture() {
+  const marque = document.getElementById('marque').value;
+  const modele = document.getElementById('modele').value;
+  const annee = document.getElementById('annee').value;
+  if (!marque || !modele || !annee) { alert('Sélectionnez la marque, le modèle et l\'année.'); return; }
+  document.getElementById('voitureLoading').style.display = 'block';
+  document.getElementById('voitureResult').classList.remove('show');
+  const key = `${marque}_${modele}_${annee}`;
+  if (taillesPneus[key]) {
+    setTimeout(() => {
+      showResult('voitureResult', { ...taillesPneus[key], label: `${marque} ${modele} ${annee} · Dimensions d'origine` });
+      document.getElementById('voitureLoading').style.display = 'none';
+    }, 500);
+    return;
+  }
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 400,
+        messages: [{ role: 'user', content: `Dimensions pneus d'origine pour ${marque} ${modele} ${annee}. JSON uniquement sans markdown: {"taille":"205/55 R16","alt":"215/50 R17","pression":"2.3 / 2.1 bar","label":"${marque} ${modele} ${annee} · Origine"}` }] })
+    });
+    const d = await res.json();
+    let txt = d.content.map(c=>c.text||'').join('').replace(/\`\`\`json|\`\`\`/g,'').trim();
+    showResult('voitureResult', JSON.parse(txt));
+  } catch(e) {
+    showResult('voitureResult', { taille: '205/55 R16', alt: '195/65 R15', pression: '2.3 / 2.1 bar', label: `${marque} ${modele} ${annee} · Appelez pour confirmation` });
+  }
+  document.getElementById('voitureLoading').style.display = 'none';
+}
+function handlePhoto(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = async (ev) => {
+    const base64 = ev.target.result.split(',')[1];
+    document.getElementById('photoImg').src = ev.target.result;
+    document.getElementById('photoPreview').style.display = 'block';
+    document.getElementById('photoLoading').style.display = 'block';
+    document.getElementById('photoResult').classList.remove('show');
+    try {
+      const res = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 500,
+          messages: [{ role: 'user', content: [
+            { type: 'image', source: { type: 'base64', media_type: file.type, data: base64 } },
+            { type: 'text', text: 'Lis les inscriptions sur ce pneu. Identifie la taille (ex: 205/55 R16 91V). JSON uniquement sans markdown: {"taille":"205/55 R16","alt":"","pression":"","label":"Lu sur votre pneu"}. Si illisible: {"taille":"Non lisible","alt":"","pression":"","label":"Rapprochez-vous ou appelez le 02 40 50 70 24"}' }
+          ]}] })
+      });
+      const d = await res.json();
+      let txt = d.content.map(c=>c.text||'').join('').replace(/\`\`\`json|\`\`\`/g,'').trim();
+      showResult('photoResult', JSON.parse(txt));
+    } catch(e) {
+      showResult('photoResult', { taille: 'Photo illisible', alt: '', pression: '', label: 'Appelez-nous : 02 40 50 70 24' });
+    }
+    document.getElementById('photoLoading').style.display = 'none';
+  };
+  reader.readAsDataURL(file);
+}
+const drop = document.getElementById('photoDrop');
+if (drop) {
+  drop.addEventListener('dragover', e => { e.preventDefault(); drop.classList.add('dragover'); });
+  drop.addEventListener('dragleave', () => drop.classList.remove('dragover'));
+  drop.addEventListener('drop', e => { e.preventDefault(); drop.classList.remove('dragover'); const f = e.dataTransfer.files[0]; if (f) handlePhoto({target:{files:[f]}}); });
+}
+
+// === MINI FINDER dans RDV ===
+let miniFTailleFound = '';
+
+function toggleMiniFinder() {
+  const body = document.getElementById('miniFBody');
+  const arrow = document.getElementById('miniFArrow');
+  body.classList.toggle('open');
+  arrow.classList.toggle('open');
+}
+
+function switchMiniTab(tab) {
+  document.querySelectorAll('.mini-tab').forEach((t,i) => t.classList.toggle('active', ['plaque','voiture','photo'][i] === tab));
+  document.querySelectorAll('.mini-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('mini-panel-' + tab).classList.add('active');
+}
+
+function showMiniResult(taille, label) {
+  miniFTailleFound = taille;
+  document.getElementById('miniFTaille').textContent = taille;
+  document.getElementById('miniFLabel').textContent = label;
+  document.getElementById('miniFResult').style.display = 'block';
+  document.getElementById('miniFLoading').style.display = 'none';
+}
+
+function applyTailleToForm() {
+  document.getElementById('taillePneu').value = miniFTailleFound;
+  document.getElementById('taille-group').style.display = 'flex';
+  // Auto-select "Changement de pneus" si pas encore sélectionné
+  const svc = document.getElementById('service');
+  if (!svc.value) svc.value = 'Changement de pneus';
+  // Fermer le finder
+  document.getElementById('miniFBody').classList.remove('open');
+  document.getElementById('miniFArrow').classList.remove('open');
+  // Confirmation visuelle
+  document.getElementById('miniFResult').style.borderColor = '#4ade80';
+  setTimeout(() => { if(document.getElementById('miniFResult')) document.getElementById('miniFResult').style.borderColor = 'var(--gold)'; }, 2000);
+}
+
+function rdvUpdateModeles() {
+  const marque = document.getElementById('rdvMarque').value;
+  const modeleEl = document.getElementById('rdvModele');
+  const anneeEl = document.getElementById('rdvAnnee');
+  modeleEl.innerHTML = '<option value="">— Modèle</option>';
+  anneeEl.innerHTML = '<option value="">— Année</option>';
+  if (marque && catalogueVehicules[marque]) Object.keys(catalogueVehicules[marque]).forEach(m => modeleEl.innerHTML += `<option>${m}</option>`);
+}
+function rdvUpdateAnnees() {
+  const marque = document.getElementById('rdvMarque').value;
+  const modele = document.getElementById('rdvModele').value;
+  const anneeEl = document.getElementById('rdvAnnee');
+  anneeEl.innerHTML = '<option value="">— Année</option>';
+  if (marque && modele && catalogueVehicules[marque]?.[modele]) catalogueVehicules[marque][modele].forEach(a => anneeEl.innerHTML += `<option>${a}</option>`);
+}
+
+async function rdvSearchPlaque() {
+  const plaque = document.getElementById('rdvPlaqueInput').value.trim();
+  if (!plaque || plaque.length < 7) { alert('Plaque invalide (ex: AB-123-CD)'); return; }
+  document.getElementById('miniFLoading').style.display = 'block';
+  document.getElementById('miniFResult').style.display = 'none';
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 200,
+        messages: [{ role: 'user', content: `Taille de pneu la plus probable pour la plaque française "${plaque}". JSON uniquement: {"taille":"205/55 R16","label":"Estimation - ${plaque}"}` }] })
+    });
+    const d = await res.json();
+    const txt = d.content.map(c=>c.text||'').join('').replace(/\`\`\`json|\`\`\`/g,'').trim();
+    const r = JSON.parse(txt);
+    showMiniResult(r.taille, r.label);
+  } catch(e) {
+    showMiniResult('205/55 R16', 'Taille courante — à confirmer');
+  }
+}
+
+async function rdvSearchVoiture() {
+  const marque = document.getElementById('rdvMarque').value;
+  const modele = document.getElementById('rdvModele').value;
+  const annee = document.getElementById('rdvAnnee').value;
+  if (!marque || !modele || !annee) { alert('Sélectionnez marque, modèle et année.'); return; }
+  document.getElementById('miniFLoading').style.display = 'block';
+  document.getElementById('miniFResult').style.display = 'none';
+  const key = `${marque}_${modele}_${annee}`;
+  if (taillesPneus[key]) {
+    setTimeout(() => showMiniResult(taillesPneus[key].taille, `${marque} ${modele} ${annee} · Origine`), 400);
+    return;
+  }
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 200,
+        messages: [{ role: 'user', content: `Taille pneu origine ${marque} ${modele} ${annee}. JSON uniquement: {"taille":"205/55 R16","label":"${marque} ${modele} ${annee}"}` }] })
+    });
+    const d = await res.json();
+    const txt = d.content.map(c=>c.text||'').join('').replace(/\`\`\`json|\`\`\`/g,'').trim();
+    const r = JSON.parse(txt);
+    showMiniResult(r.taille, r.label);
+  } catch(e) {
+    showMiniResult('205/55 R16', `${marque} ${modele} ${annee} · À confirmer`);
+  }
+}
+
+async function rdvHandlePhoto(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = async (ev) => {
+    const base64 = ev.target.result.split(',')[1];
+    document.getElementById('miniFLoading').style.display = 'block';
+    document.getElementById('miniFResult').style.display = 'none';
+    try {
+      const res = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 300,
+          messages: [{ role: 'user', content: [
+            { type: 'image', source: { type: 'base64', media_type: file.type, data: base64 } },
+            { type: 'text', text: 'Lis la taille sur ce pneu. JSON uniquement: {"taille":"205/55 R16","label":"Lu sur votre pneu"}' }
+          ]}] })
+      });
+      const d = await res.json();
+      const txt = d.content.map(c=>c.text||'').join('').replace(/\`\`\`json|\`\`\`/g,'').trim();
+      const r = JSON.parse(txt);
+      showMiniResult(r.taille, r.label);
+    } catch(e) {
+      showMiniResult('Non lisible', 'Appelez-nous : 02 40 50 70 24');
+    }
+  };
+  reader.readAsDataURL(file);
+}
+
+// === MINI FINDER ===
+
 // SLIDESHOW TARIFS (inversé : N°6 puis N°1)
 const tarifsSlides = document.querySelectorAll('#tarifs .tarifs-bg-slide');
 const tarifsDots = document.querySelectorAll('#tarifs .tarifs-dot');
@@ -1155,15 +1690,16 @@ function selectTime2(btn, time) {
 renderCalendar2();
 
 // === FORMULAIRE COMMUN ===
-function sendRDV(prenom, nom, phone, email, date, heure, service, successId, btnEl) {
+function sendRDV(prenom, nom, phone, email, date, heure, service, taille, successId, btnEl) {
   if (!prenom || !phone || !date || !heure || !service) {
     alert('Merci de remplir tous les champs obligatoires : prénom, téléphone, jour, heure et prestation.');
     return;
   }
   btnEl.textContent = 'Envoi en cours...'; btnEl.disabled = true;
+  const message = taille ? `Taille de pneu : ${taille}` : '—';
   emailjs.send('service_hsdt5uk', 'template_yllon3k', {
     prenom, nom, telephone: phone, email, date, heure, service,
-    name: prenom + ' ' + nom, title: service, message: '—'
+    name: prenom + ' ' + nom, title: service, message
   }).then(() => {
     document.getElementById(successId).style.display = 'block';
     btnEl.textContent = 'Confirmer le rendez-vous →'; btnEl.disabled = false;
@@ -1175,6 +1711,7 @@ function sendRDV(prenom, nom, phone, email, date, heure, service, successId, btn
 
 function submitForm() {
   const btn = document.querySelector('#contact .btn-rdv-submit');
+  const taille = document.getElementById('taillePneu') ? document.getElementById('taillePneu').value : '';
   sendRDV(
     document.getElementById('fname').value.trim(),
     document.getElementById('lname').value.trim(),
@@ -1183,6 +1720,7 @@ function submitForm() {
     document.getElementById('date').value,
     document.getElementById('heure').value,
     document.getElementById('service').value,
+    taille,
     'formSuccess', btn
   );
 }
