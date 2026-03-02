@@ -366,7 +366,14 @@ section { padding: 6rem 5vw; }
 .tip-item p { color: var(--text-dim); font-size: 0.75rem; line-height: 1.65; font-weight: 300; }
 
 /* FAQ */
-#faq { background: var(--black); }
+#faq { background: #07090f; position: relative; overflow: hidden; }
+#faq .faq-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background-image: url('https://images.unsplash.com/photo-1485291571150-772bcfc10da5?w=1800&q=90&auto=format&fit=crop');
+  background-size: cover; background-position: center;
+  filter: brightness(0.18) saturate(0.5);
+}
+#faq .section-wrap { position: relative; z-index: 2; }
 .faq-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; margin-top: 3rem; }
 .faq-left { position: sticky; top: 140px; }
 .faq-left p { color: var(--text-mid); font-size: 0.85rem; line-height: 1.8; margin: 1rem 0 1.5rem; font-weight: 300; }
@@ -825,6 +832,7 @@ footer { background: var(--carbon2); color: var(--text-dim); padding: 4rem 5vw 2
 
 <!-- FAQ -->
 <section id="faq">
+  <div class="faq-bg"></div>
   <div class="section-wrap">
     <div class="faq-layout">
       <div class="faq-left reveal">
@@ -892,8 +900,8 @@ footer { background: var(--carbon2); color: var(--text-dim); padding: 4rem 5vw 2
         <p>Matériel à la pointe : machine de montage sans mors, équilibreuse 3D, banc de géométrie numérique.</p>
         <div class="team-grid">
           <div class="team-member"><div class="team-avatar">👨‍🔧</div><strong>Samir Bouzera</strong><span>Gérant & Expert pneus</span></div>
-          <div class="team-member"><div class="team-avatar">🔧</div><strong>—</strong><span>Technicien senior</span></div>
-          <div class="team-member"><div class="team-avatar">⚙️</div><strong>—</strong><span>Monteur / Équilibreur</span></div>
+          <div class="team-member"><div class="team-avatar">🔧</div><strong>Samir Bouzera</strong><span>Technicien senior</span></div>
+          <div class="team-member"><div class="team-avatar">⚙️</div><strong>Samir Bouzera</strong><span>Monteur / Équilibreur</span></div>
         </div>
       </div>
     </div>
